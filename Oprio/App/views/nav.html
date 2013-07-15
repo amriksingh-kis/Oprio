@@ -1,0 +1,39 @@
+﻿<nav class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <!--<a class="brand" href="/">
+            <span class="title">Hot Towel SPA</span> 
+        </a>
+        <div class="btn-group" data-bind="foreach: router.visibleRoutes">
+            <a data-bind="css: { active: isActive }, attr: { href: hash }, text: name" 
+                class="btn btn-info" href="#"></a>
+        </div>
+        <div class="loader pull-right" data-bind="css: { active: router.isNavigating }">
+            <div class="progress progress-striped active page-progress-bar">
+                <div class="bar" style="width: 100px;"></div>
+            </div>
+        </div>-->
+        <div class="main-content">
+            <div class="span3 pull-left">
+                <img class="nav-photo" data-bind="css: { 'left-photo': isAuthenticated }" src="/Content/images/LOGO.png" />
+            </div>
+
+            <div class="nav-logoff" data-bind="if: isAuthenticated, click: logOff">
+                <a href="javascript:void(0)">
+                    <img class="" src="/Content/images/log-off.png" />
+                </a>
+                <a href="javascript:void(0)">
+                    <div>log off</div>
+                </a>
+            </div>
+            <div class="username" data-bind="if: isAuthenticated">
+                <img class="" src="/Content/images/user.png" />
+                <div data-bind="text: userName"></div>
+            </div>
+            <form action="" method="post" class="search" data-bind="if: isAuthenticated">
+                <input type="search" name="" placeholder="search" class="input" />
+                <input type="submit" name="" value="" class="submit" />
+            </form>
+        </div>
+    </div>
+    <div class="secondary-navbar" data-bind="css: { 'yellow-stripe': isAuthenticated }"></div>
+</nav>

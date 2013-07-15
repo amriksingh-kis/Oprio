@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oprio", "Oprio\Oprio.csproj", "{BC2B2502-3D36-4C5B-AE9F-DAC3E4252BC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{B00C203F-53BC-4208-B547-5605C3D7838A}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://opriodev.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Oprio\\Oprio.csproj
+		SccProjectName1 = Oprio
+		SccLocalPath1 = Oprio
+		SccProjectUniqueName2 = Data\\Data.csproj
+		SccProjectName2 = Data
+		SccLocalPath2 = Data
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BC2B2502-3D36-4C5B-AE9F-DAC3E4252BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC2B2502-3D36-4C5B-AE9F-DAC3E4252BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC2B2502-3D36-4C5B-AE9F-DAC3E4252BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC2B2502-3D36-4C5B-AE9F-DAC3E4252BC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B00C203F-53BC-4208-B547-5605C3D7838A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B00C203F-53BC-4208-B547-5605C3D7838A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B00C203F-53BC-4208-B547-5605C3D7838A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B00C203F-53BC-4208-B547-5605C3D7838A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

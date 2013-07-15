@@ -1,0 +1,22 @@
+﻿@Model.Sender has invited you to join a conversation on Oprio;
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div>
+        <h1>
+            Join the conversation: @Model.ConvName on Oprio</h1>
+        <br />
+        <br />
+        <p>
+            <a href='http://www.oprio.com/conv/@Model.ConvID'>Please click here to join</a></p>
+        <br />
+        <br />
+        Sincerely,<br />
+        <br />
+        The Oprio Team
+    </div>
+</body>
+</html>

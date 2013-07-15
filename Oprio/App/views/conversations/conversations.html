@@ -1,0 +1,62 @@
+﻿<section class="conversations">      
+    <div class="head-section">
+        <div class="title">Conversations</div>
+        <div class="filter">
+            <div>
+                <img src="../Content/images/priority.png" />
+                <a href="javascript:void()" data-bind="click: togglePriority, css: { 'orange': isPriorityFilter }">Priority</a>
+            </div>
+            <div>
+                <img src="../Content/images/time.png" /> 
+                <a href="javascript:void()" data-bind="click: toggleTime, css: { 'orange': isTimeFilter }">Time</a>
+            </div>
+            <div>
+                <img src="../Content/images/arhived.png" />
+                <a href="javascript:void()" data-bind="click: toggleArchived, css: { 'orange': isArchiveFilter }">Archived</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="convs" class="" data-bind="template: { foreach: conversations, beforeRemove:hideCard }">
+        <div data-bind="click: $parent.gotoDetails" class="item">
+            <p class="when">
+                <!-- Today-->
+                <a class="pin" data-bind="click: $parent.pin, css: { 'pin-green': isPinned}" href="javascript:void(0)"></a>
+                <a class="time" href="javascript:void(0)"></a>
+                <a class="archive" href="javascript:void(0)" data-bind="click: $parent.archive, css: { 'archive-green': isArchived}"></a>
+            </p>
+            <hr />
+            <p class="titleheader">
+                <span data-bind="text: formattedTimeStamp" />
+                <span data-bind="text: creatorFullName" />
+            </p>
+            <p class="title" data-bind="text: name"></p>
+            <div class="text">
+                <img src="../Content/images/photo.png" />
+                <div class="message">
+                    <img src="../Content/images/message.png" />
+                    <div class="date" data-bind="text: lastItemModified"></div>
+                    <!--data-bind="text: lastmessage.itemText()"-->
+                    <p data-bind="text: lastItem().itemText"></p>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <hr />
+            <div class="foot">
+                <div>
+                    <a href="javascript:void(0)">
+                        <img src="../Content/images/con-1.png" /></a><span data-bind="text: totalMessages"></span>(<span data-bind="    text: unreadMessages"></span>)
+                </div>
+                <div>
+                    <a href="javascript:void(0)">
+                        <img src="../Content/images/con-3.png" /></a><span data-bind="text: totalTrackables"></span>(<span data-bind="    text: unreadTrackables"></span>)
+                </div>
+                <div>
+                    <a href="javascript:void(0)">
+                        <img src="../Content/images/con-2.png" /></a><span data-bind="text: totalFiles"></span>(<span data-bind="    text: unreadFiles"></span>)
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

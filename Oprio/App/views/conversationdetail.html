@@ -1,0 +1,139 @@
+﻿<section class="conversations">
+    <div class="contract-panel">
+        <div class="contract-border">
+              <a href="javascript:void(0)" data-bind="click: showPanel">
+                <img src="../Content/images/show-expanded.png" /></a>
+        </div>
+        <div class="conv-expand">
+            <div class="block">
+                <img src="../Content/images/conv-expanded.png" />
+                <div class="line"></div>
+            </div>
+            <div class="block">
+                <img src="../Content/images/filter-search.png" />
+                <div class="contract-filter">
+                    <a href="javascript:void(0)">
+                        <img src="../Content/images/message-filter.png" />
+                    </a>
+                    <a href="javascript:void(0)">
+                        <img src="../Content/images/trackable-filter.png" />
+                    </a>
+                    <a href="javascript:void(0)">
+                        <img src="../Content/images/file-filter.png" />
+                    </a>
+                </div>
+                 <div class="block"></div>
+            </div>
+            <div class="line"></div>
+
+            <div class="block">
+                <img src="../Content/images/unread.png" />
+
+                <div class="line"></div>
+            </div>
+            <div class="block">
+                <a href="javascript:void(0)" data-bind="click: up">
+                    <img class="up" src="../Content/images/up.png" />
+                </a>
+                <a href="javascript:void(0)" data-bind="click: down">
+                    <img class="down" src="../Content/images/down.png" />
+                </a>
+            </div>
+            <div data-bind="foreach: conversations" class="items">
+                <div data-bind="click: $parent.select">
+                    <img class="message" src="../Content/images/con-1.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="expand-panel">
+        <div class="expand-border">
+            <a href="javascript:void(0)" data-bind="click: hidePanel">
+                <img src="../Content/images/expand.png" /></a>
+        </div>
+        <div class="conv-expand">
+            <div class="block">
+                <img class="conv-img" src="../Content/images/conv-expanded.png" />
+                <div class="title">
+                    Conversation
+                </div>
+                <div class="line"></div>
+            </div>
+            <div class="block">
+                <img class="filter-search" src="../Content/images/filter-search.png" />
+                <div class="lower-title">
+                    Filtered by:
+                </div>
+                <div class="filter">
+                    <a href="javascript:void(0)">
+                        <img src="../Content/images/message-filter.png" />
+                    </a>
+                    <a href="javascript:void(0)">
+                        <img src="../Content/images/trackable-filter.png" />
+                    </a>
+                    <a href="javascript:void(0)">
+                        <img src="../Content/images/file-filter.png" />
+                    </a>
+                </div>
+                <div class="line"></div>
+            </div>
+            <div class="block">
+                <img class="filter-unread" src="../Content/images/unread.png" />
+                <div class="lower-title">
+                    Unread
+                </div>
+                <div class="line"></div>
+            </div>
+            <div class="block">
+                <a href="javascript:void(0)" data-bind="click: up">
+                    <img class="up" src="../Content/images/up.png" />
+                </a>
+                <a href="javascript:void(0)" data-bind="click: down">
+                    <img class="down" src="../Content/images/down.png" />
+                </a>
+            </div>
+            <div data-bind="foreach: conversations" class="items">
+                <div data-bind="click: $parent.select">
+                    <img class="message" src="../Content/images/con-1.png" />
+                    20/03 <span data-bind="text: creatorFullName"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="head-section">
+        <div class="before-title">YOUR CONVERSATION ABOUT:</div>
+        <div class="detail-title">LATEST UPDATES IN CRM</div>
+
+    </div>
+
+    <div class="detail-items" data-bind="foreach: conversations">
+        <div class="item">            
+            <div class="text">
+                <img src="../Content/images/photo.png" />
+                <div class="message">
+                    <img src="../Content/images/message.png" />
+                    <div class="date" data-bind="text: messageformattedTimeStamp"></div>
+                    <!--data-bind="text: lastmessage.itemText()"-->
+                    <p data-bind="text: lastmessage().itemText"></p>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <hr />
+            <div class="foot">
+                <div>
+                    <a href="javascript:void(0)">
+                        <img src="../Content/images/con-1.png" /></a><span data-bind="text: totalMessages"></span>(<span data-bind="    text: unreadMessages"></span>)
+                </div>
+                <div>
+                    <a href="javascript:void(0)">
+                        <img src="../Content/images/con-3.png" /></a><span data-bind="text: totalTrackables"></span>(<span data-bind="    text: unreadTrackables"></span>)
+                </div>
+                <div>
+                    <a href="javascript:void(0)">
+                        <img src="../Content/images/con-2.png" /></a><span data-bind="text: totalFiles"></span>(<span data-bind="    text: unreadFiles"></span>)
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

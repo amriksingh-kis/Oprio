@@ -1,0 +1,3144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DataModelStoreContainer">
+          <EntitySet Name="Account" EntityType="DataModel.Store.Account" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Applications" EntityType="DataModel.Store.Applications" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="File" EntityType="DataModel.Store.File" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="FreeDomains" EntityType="DataModel.Store.FreeDomains" store:Type="Tables" store:Schema="dbo" store:Name="FreeDomains">
+            <DefiningQuery>SELECT 
+      [FreeDomains].[ID] AS [ID], 
+      [FreeDomains].[Domain] AS [Domain]
+      FROM [dbo].[FreeDomains] AS [FreeDomains]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Invite" EntityType="DataModel.Store.Invite" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Invoice" EntityType="DataModel.Store.Invoice" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Item" EntityType="DataModel.Store.Item" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ItemStatus" EntityType="DataModel.Store.ItemStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ItemStatusHistory" EntityType="DataModel.Store.ItemStatusHistory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ItemType" EntityType="DataModel.Store.ItemType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Log" EntityType="DataModel.Store.Log" store:Type="Tables" store:Schema="dbo" store:Name="Log">
+            <DefiningQuery>SELECT 
+      [Log].[ID] AS [ID], 
+      [Log].[Date] AS [Date], 
+      [Log].[Thread] AS [Thread], 
+      [Log].[Level] AS [Level], 
+      [Log].[Logger] AS [Logger], 
+      [Log].[Message] AS [Message]
+      FROM [dbo].[Log] AS [Log]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Memberships" EntityType="DataModel.Store.Memberships" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Organisation" EntityType="DataModel.Store.Organisation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrganisationDomain" EntityType="DataModel.Store.OrganisationDomain" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrgPrefs" EntityType="DataModel.Store.OrgPrefs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Payment" EntityType="DataModel.Store.Payment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PaymentFrequency" EntityType="DataModel.Store.PaymentFrequency" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PaymentMethod" EntityType="DataModel.Store.PaymentMethod" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PaymentTerms" EntityType="DataModel.Store.PaymentTerms" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Person" EntityType="DataModel.Store.Person" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonPrefs" EntityType="DataModel.Store.PersonPrefs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PersonSession" EntityType="DataModel.Store.PersonSession" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Profiles" EntityType="DataModel.Store.Profiles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Relationship" EntityType="DataModel.Store.Relationship" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RelationshipType" EntityType="DataModel.Store.RelationshipType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Roles" EntityType="DataModel.Store.Roles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Subscription" EntityType="DataModel.Store.Subscription" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SubscriptionType" EntityType="DataModel.Store.SubscriptionType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tag" EntityType="DataModel.Store.Tag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TagPerson" EntityType="DataModel.Store.TagPerson" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TagPersonItem" EntityType="DataModel.Store.TagPersonItem" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Ticket" EntityType="DataModel.Store.Ticket" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TicketStatus" EntityType="DataModel.Store.TicketStatus" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TicketType" EntityType="DataModel.Store.TicketType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Trackable" EntityType="DataModel.Store.Trackable" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserProfile" EntityType="DataModel.Store.UserProfile" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="DataModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UsersInRoles" EntityType="DataModel.Store.UsersInRoles" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="vwPersonUser" EntityType="DataModel.Store.vwPersonUser" store:Type="Views" store:Schema="dbo" store:Name="vwPersonUser">
+            <DefiningQuery>SELECT 
+      [vwPersonUser].[PersonID] AS [PersonID], 
+      [vwPersonUser].[FirstName] AS [FirstName], 
+      [vwPersonUser].[LastName] AS [LastName], 
+      [vwPersonUser].[UserID] AS [UserID], 
+      [vwPersonUser].[UserName] AS [UserName], 
+      [vwPersonUser].[OrganisationID] AS [OrganisationID], 
+      [vwPersonUser].[Email] AS [Email], 
+      [vwPersonUser].[RoleName] AS [RoleName]
+      FROM [dbo].[vwPersonUser] AS [vwPersonUser]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Account_PaymentFrequency" Association="DataModel.Store.FK_Account_PaymentFrequency">
+            <End Role="PaymentFrequency" EntitySet="PaymentFrequency" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_PaymentMethod" Association="DataModel.Store.FK_Account_PaymentMethod">
+            <End Role="PaymentMethod" EntitySet="PaymentMethod" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_PaymentTerms" Association="DataModel.Store.FK_Account_PaymentTerms">
+            <End Role="PaymentTerms" EntitySet="PaymentTerms" />
+            <End Role="Account" EntitySet="Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_File_Item" Association="DataModel.Store.FK_File_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="File" EntitySet="File" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invite_Person" Association="DataModel.Store.FK_Invite_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Invite" EntitySet="Invite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invite_Tag" Association="DataModel.Store.FK_Invite_Tag">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="Invite" EntitySet="Invite" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoice_Account" Association="DataModel.Store.FK_Invoice_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoice_Payment" Association="DataModel.Store.FK_Invoice_Payment">
+            <End Role="Payment" EntitySet="Payment" />
+            <End Role="Invoice" EntitySet="Invoice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Item_Person" Association="DataModel.Store.FK_Item_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Item" EntitySet="Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemStatus_ItemType" Association="DataModel.Store.FK_ItemStatus_ItemType">
+            <End Role="ItemType" EntitySet="ItemType" />
+            <End Role="ItemStatus" EntitySet="ItemStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemStatusHistory_Item" Association="DataModel.Store.FK_ItemStatusHistory_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="ItemStatusHistory" EntitySet="ItemStatusHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemStatusHistory_ItemStatus" Association="DataModel.Store.FK_ItemStatusHistory_ItemStatus">
+            <End Role="ItemStatus" EntitySet="ItemStatus" />
+            <End Role="ItemStatusHistory" EntitySet="ItemStatusHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemStatusHistory_Person" Association="DataModel.Store.FK_ItemStatusHistory_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="ItemStatusHistory" EntitySet="ItemStatusHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_Message" Association="DataModel.Store.FK_Message_Message">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="Item1" EntitySet="Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_MessageType" Association="DataModel.Store.FK_Message_MessageType">
+            <End Role="ItemType" EntitySet="ItemType" />
+            <End Role="Item" EntitySet="Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organisation_Account" Association="DataModel.Store.FK_Organisation_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Organisation" EntitySet="Organisation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganisationDomain_Organisation" Association="DataModel.Store.FK_OrganisationDomain_Organisation">
+            <End Role="Organisation" EntitySet="Organisation" />
+            <End Role="OrganisationDomain" EntitySet="OrganisationDomain" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrgPrefs_Organisation" Association="DataModel.Store.FK_OrgPrefs_Organisation">
+            <End Role="Organisation" EntitySet="Organisation" />
+            <End Role="OrgPrefs" EntitySet="OrgPrefs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_Account" Association="DataModel.Store.FK_Payment_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Payment" EntitySet="Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Account" Association="DataModel.Store.FK_Person_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Organisation" Association="DataModel.Store.FK_Person_Organisation">
+            <End Role="Organisation" EntitySet="Organisation" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Users" Association="DataModel.Store.FK_Person_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonPrefs_Person" Association="DataModel.Store.FK_PersonPrefs_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonPrefs" EntitySet="PersonPrefs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonSession_Person" Association="DataModel.Store.FK_PersonSession_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonSession" EntitySet="PersonSession" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relationship_Person" Association="DataModel.Store.FK_Relationship_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Relationship" EntitySet="Relationship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relationship_Person1" Association="DataModel.Store.FK_Relationship_Person1">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Relationship" EntitySet="Relationship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relationship_RelationshipType" Association="DataModel.Store.FK_Relationship_RelationshipType">
+            <End Role="RelationshipType" EntitySet="RelationshipType" />
+            <End Role="Relationship" EntitySet="Relationship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subscription_Account" Association="DataModel.Store.FK_Subscription_Account">
+            <End Role="Account" EntitySet="Account" />
+            <End Role="Subscription" EntitySet="Subscription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subscription_SubscriptionType" Association="DataModel.Store.FK_Subscription_SubscriptionType">
+            <End Role="SubscriptionType" EntitySet="SubscriptionType" />
+            <End Role="Subscription" EntitySet="Subscription" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tag_Person" Association="DataModel.Store.FK_Tag_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Tag" EntitySet="Tag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagPerson_Person" Association="DataModel.Store.FK_TagPerson_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="TagPerson" EntitySet="TagPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagPerson_Person1" Association="DataModel.Store.FK_TagPerson_Person1">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="TagPerson" EntitySet="TagPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagPerson_Tag" Association="DataModel.Store.FK_TagPerson_Tag">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="TagPerson" EntitySet="TagPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagPersonItem_Item" Association="DataModel.Store.FK_TagPersonItem_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="TagPersonItem" EntitySet="TagPersonItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagPersonItem_Person" Association="DataModel.Store.FK_TagPersonItem_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="TagPersonItem" EntitySet="TagPersonItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagPersonItem_TagPerson" Association="DataModel.Store.FK_TagPersonItem_TagPerson">
+            <End Role="TagPerson" EntitySet="TagPerson" />
+            <End Role="TagPersonItem" EntitySet="TagPersonItem" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Person" Association="DataModel.Store.FK_Ticket_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_TicketStatus" Association="DataModel.Store.FK_Ticket_TicketStatus">
+            <End Role="TicketStatus" EntitySet="TicketStatus" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_TicketType" Association="DataModel.Store.FK_Ticket_TicketType">
+            <End Role="TicketType" EntitySet="TicketType" />
+            <End Role="Ticket" EntitySet="Ticket" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trackable_Item1" Association="DataModel.Store.FK_Trackable_Item1">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="Trackable" EntitySet="Trackable" />
+          </AssociationSet>
+          <AssociationSet Name="MembershipEntity_Application" Association="DataModel.Store.MembershipEntity_Application">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="Memberships" EntitySet="Memberships" />
+          </AssociationSet>
+          <AssociationSet Name="MembershipEntity_User" Association="DataModel.Store.MembershipEntity_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Memberships" EntitySet="Memberships" />
+          </AssociationSet>
+          <AssociationSet Name="ProfileEntity_User" Association="DataModel.Store.ProfileEntity_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Profiles" EntitySet="Profiles" />
+          </AssociationSet>
+          <AssociationSet Name="RoleEntity_Application" Association="DataModel.Store.RoleEntity_Application">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="Roles" EntitySet="Roles" />
+          </AssociationSet>
+          <AssociationSet Name="User_Application" Association="DataModel.Store.User_Application">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="UsersInRole_Role" Association="DataModel.Store.UsersInRole_Role">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="UsersInRole_User" Association="DataModel.Store.UsersInRole_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UsersInRoles" EntitySet="UsersInRoles" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="BillingName" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="AddressLine1" Type="nvarchar" MaxLength="100" />
+          <Property Name="AddressLine2" Type="nvarchar" MaxLength="100" />
+          <Property Name="City" Type="nvarchar" MaxLength="64" />
+          <Property Name="State" Type="nchar" MaxLength="2" />
+          <Property Name="ZipCode" Type="nchar" MaxLength="5" />
+          <Property Name="ContactName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ContactPhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="ContactEmail" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsBusinessAccount" Type="bit" Nullable="false" />
+          <Property Name="DisplayName" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="TechnicalContactName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="TechnicalContactPhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="TechnicalContactEmail" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="PaymentMethodID" Type="int" />
+          <Property Name="PaymentFrequencyID" Type="int" />
+          <Property Name="PaymentTermsID" Type="int" />
+          <Property Name="StorageUsageMB" Type="int" Nullable="false" />
+          <Property Name="ChargeSalesTax" Type="bit" Nullable="false" />
+          <Property Name="SalesTaxRef" Type="nvarchar" MaxLength="64" />
+        </EntityType>
+        <EntityType Name="Applications">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="235" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="File">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RevisionNumber" Type="int" Nullable="false" />
+          <Property Name="MimeType" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="Size" Type="int" Nullable="false" />
+          <Property Name="ItemID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Jet.dbo.FreeDomains' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="FreeDomains">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Domain" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Domain" Type="nvarchar" Nullable="false" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="Invite">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="InvitedByPersonID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TagID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SendDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpireDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="InvoiceNumber" Type="int" Nullable="false" />
+          <Property Name="InvoiceDate" Type="datetime" Nullable="false" />
+          <Property Name="NetInvoiceAmount" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="TaxAmount" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="TaxRate" Type="decimal" Precision="6" Scale="2" />
+          <Property Name="GrossInvoiceAmount" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="InvoideDueDate" Type="datetime" Nullable="false" />
+          <Property Name="AccountID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="IsPaid" Type="bit" Nullable="false" />
+          <Property Name="PaymentDate" Type="datetime" />
+          <Property Name="PaymentID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ItemText" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ParentItemID" Type="uniqueidentifier" />
+          <Property Name="ItemLevel" Type="tinyint" Nullable="false" />
+          <Property Name="ItemTypeID" Type="int" Nullable="false" />
+          <Property Name="CreationTimestamp" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedTimestamp" Type="datetime" Nullable="false" />
+          <Property Name="CreatorPersonID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="ItemStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="ItemTypeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ItemStatusHistory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ItemID" Type="uniqueidentifier" />
+          <Property Name="ItemStatusID" Type="int" Nullable="false" />
+          <Property Name="SetAtTimestamp" Type="datetime" Nullable="false" />
+          <Property Name="SetByPersonID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="ItemType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Jet.dbo.Log' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Thread" />
+            <PropertyRef Name="Level" />
+            <PropertyRef Name="Logger" />
+            <PropertyRef Name="Message" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Thread" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Level" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Logger" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="Message" Type="varchar" Nullable="false" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="Memberships">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordFormat" Type="int" Nullable="false" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowsStart" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Organisation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="SignupDate" Type="date" Nullable="false" />
+          <Property Name="PublicKey" Type="nvarchar" MaxLength="1024" />
+          <Property Name="PrivateKey" Type="nvarchar" MaxLength="1024" />
+          <Property Name="Handle" Type="nvarchar" MaxLength="32" />
+          <Property Name="AccountID" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="OrganisationDomain">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="OrgID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Domain" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrgPrefs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OrgID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PrefKey" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="PrefValue" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="Description" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PaymentDate" Type="datetime" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="TransactionRef" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="AccountID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaymentFrequency">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="PeriodMonths" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaymentMethod">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="PaymentTerms">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="PeriodDays" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="10" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OrganisationID" Type="uniqueidentifier" />
+          <Property Name="CreationTimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="AccountID" Type="uniqueidentifier" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonPrefs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PersonID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PrefKey" Type="nvarchar" Nullable="false" MaxLength="32" />
+          <Property Name="PrefValue" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="PersonSession">
+          <Key>
+            <PropertyRef Name="ConnectionID" />
+          </Key>
+          <Property Name="ConnectionID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PersonID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IPAddress" Type="varchar" Nullable="false" MaxLength="15" />
+          <Property Name="UserAgent" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="ConnectTimestamp" Type="datetime" Nullable="false" />
+          <Property Name="DisconnectTimestamp" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Profiles">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PropertyNames" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PropertyValueStrings" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PropertyValueBinary" Type="varbinary(max)" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Relationship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RelatingPersonID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RelatedPersonID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RelationshipTypeID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RelationshipType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Subscription">
+          <Key>
+            <PropertyRef Name="SubscriptionID" />
+          </Key>
+          <Property Name="SubscriptionID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AccountID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SubscriptionTypeID" Type="int" Nullable="false" />
+          <Property Name="PriceUserMonth" Type="decimal" Nullable="false" Precision="8" Scale="2" />
+          <Property Name="MinUsers" Type="int" Nullable="false" />
+          <Property Name="MaxUsers" Type="int" Nullable="false" />
+          <Property Name="UserCount" Type="int" Nullable="false" />
+          <Property Name="MinTermMonths" Type="int" Nullable="false" />
+          <Property Name="IsRolling" Type="bit" Nullable="false" />
+          <Property Name="BaseStorageMB" Type="int" Nullable="false" />
+          <Property Name="AdditinalStorageUserMB" Type="int" Nullable="false" />
+          <Property Name="MaxConversationItems" Type="int" Nullable="false" />
+          <Property Name="EnabledFeatures" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="CreatedByPersonID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DateModified" Type="datetime" Nullable="false" />
+          <Property Name="ModifiedByPersonID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" Nullable="false" />
+          <Property Name="EndDate" Type="datetime" Nullable="false" />
+          <Property Name="CancellationCutoffDays" Type="int" Nullable="false" />
+          <Property Name="CancellationCutoffDate" Type="datetime" Nullable="false" />
+          <Property Name="IsTrial" Type="bit" Nullable="false" />
+          <Property Name="TrialEndDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SubscriptionType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="64" />
+          <Property Name="PriceUserMonth" Type="decimal" Nullable="false" Precision="8" Scale="2" />
+          <Property Name="MinUsers" Type="int" Nullable="false" />
+          <Property Name="MaxUsers" Type="int" Nullable="false" />
+          <Property Name="MinTermMonths" Type="int" Nullable="false" />
+          <Property Name="IsRolling" Type="bit" Nullable="false" />
+          <Property Name="BaseStorageMB" Type="int" Nullable="false" />
+          <Property Name="AdditinalStorageUserMB" Type="int" Nullable="false" />
+          <Property Name="MaxConversationItems" Type="int" Nullable="false" />
+          <Property Name="EnabledFeatures" Type="nvarchar" Nullable="false" MaxLength="1024" />
+          <Property Name="CancellationCutoffDays" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsBusiness" Type="bit" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreationTimestamp" Type="datetime" Nullable="false" />
+          <Property Name="CreatorPersonID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsConversation" Type="bit" Nullable="false" />
+          <Property Name="IsSystem" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TagPerson">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TagID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PersonID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreationTimestamp" Type="datetime" Nullable="false" />
+          <Property Name="CreatorPersonID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LastAccessed" Type="datetime" />
+          <Property Name="Rank" Type="int" Nullable="false" />
+          <Property Name="Importance" Type="float" Nullable="false" />
+          <Property Name="Pinned" Type="datetime" />
+          <Property Name="Archived" Type="datetime" />
+          <Property Name="Deferred" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TagPersonItem">
+          <Key>
+            <PropertyRef Name="TagPersonID" />
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="TagPersonID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ItemID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="IsViewed" Type="bit" Nullable="false" />
+          <Property Name="ViewedTimeStamp" Type="datetime" />
+          <Property Name="CreatorPersonID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreationTimeStamp" Type="datetime" Nullable="false" />
+          <Property Name="Rank" Type="int" Nullable="false" />
+          <Property Name="Importance" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="TicketTypeID" Type="int" Nullable="false" />
+          <Property Name="IssueDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpireDate" Type="datetime" Nullable="false" />
+          <Property Name="TicketRef" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="PersonID" Type="uniqueidentifier" />
+          <Property Name="StatusID" Type="int" />
+        </EntityType>
+        <EntityType Name="TicketStatus">
+          <Key>
+            <PropertyRef Name="TicketStatusID" />
+          </Key>
+          <Property Name="TicketStatusID" Type="int" Nullable="false" />
+          <Property Name="TicketStatus" Type="nvarchar" Nullable="false" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="TicketType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="TicketTypeName" Type="nvarchar" Nullable="false" MaxLength="32" />
+        </EntityType>
+        <EntityType Name="Trackable">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="ItemID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="DueDate" Type="datetime" />
+          <Property Name="AssigneePersonID" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="56" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'Jet.dbo.vwPersonUser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="vwPersonUser">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="RoleName" />
+          </Key>
+          <Property Name="PersonID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="OrganisationID" Type="uniqueidentifier" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <Association Name="FK_Account_PaymentFrequency">
+          <End Role="PaymentFrequency" Type="DataModel.Store.PaymentFrequency" Multiplicity="0..1" />
+          <End Role="Account" Type="DataModel.Store.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentFrequency">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="PaymentFrequencyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_PaymentMethod">
+          <End Role="PaymentMethod" Type="DataModel.Store.PaymentMethod" Multiplicity="0..1" />
+          <End Role="Account" Type="DataModel.Store.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentMethod">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="PaymentMethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_PaymentTerms">
+          <End Role="PaymentTerms" Type="DataModel.Store.PaymentTerms" Multiplicity="0..1" />
+          <End Role="Account" Type="DataModel.Store.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentTerms">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="PaymentTermsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_File_Item">
+          <End Role="Item" Type="DataModel.Store.Item" Multiplicity="1" />
+          <End Role="File" Type="DataModel.Store.File" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="File">
+              <PropertyRef Name="ItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invite_Person">
+          <End Role="Person" Type="DataModel.Store.Person" Multiplicity="1" />
+          <End Role="Invite" Type="DataModel.Store.Invite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invite">
+              <PropertyRef Name="InvitedByPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invite_Tag">
+          <End Role="Tag" Type="DataModel.Store.Tag" Multiplicity="1" />
+          <End Role="Invite" Type="DataModel.Store.Invite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invite">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoice_Account">
+          <End Role="Account" Type="DataModel.Store.Account" Multiplicity="1" />
+          <End Role="Invoice" Type="DataModel.Store.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoice_Payment">
+          <End Role="Payment" Type="DataModel.Store.Payment" Multiplicity="0..1" />
+          <End Role="Invoice" Type="DataModel.Store.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="PaymentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Item_Person">
+          <End Role="Person" Type="DataModel.Store.Person" Multiplicity="0..1" />
+          <End Role="Item" Type="DataModel.Store.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="CreatorPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemStatus_ItemType">
+          <End Role="ItemType" Type="DataModel.Store.ItemType" Multiplicity="1" />
+          <End Role="ItemStatus" Type="DataModel.Store.ItemStatus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemStatus">
+              <PropertyRef Name="ItemTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemStatusHistory_Item">
+          <End Role="Item" Type="DataModel.Store.Item" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ItemStatusHistory" Type="DataModel.Store.ItemStatusHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemStatusHistory">
+              <PropertyRef Name="ItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemStatusHistory_ItemStatus">
+          <End Role="ItemStatus" Type="DataModel.Store.ItemStatus" Multiplicity="1" />
+          <End Role="ItemStatusHistory" Type="DataModel.Store.ItemStatusHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemStatusHistory">
+              <PropertyRef Name="ItemStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemStatusHistory_Person">
+          <End Role="Person" Type="DataModel.Store.Person" Multiplicity="1" />
+          <End Role="ItemStatusHistory" Type="DataModel.Store.ItemStatusHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemStatusHistory">
+              <PropertyRef Name="SetByPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_Message">
+          <End Role="Item" Type="DataModel.Store.Item" Multiplicity="0..1" />
+          <End Role="Item1" Type="DataModel.Store.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Item1">
+              <PropertyRef Name="ParentItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_MessageType">
+          <End Role="ItemType" Type="DataModel.Store.ItemType" Multiplicity="1" />
+          <End Role="Item" Type="DataModel.Store.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="ItemTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organisation_Account">
+          <End Role="Account" Type="DataModel.Store.Account" Multiplicity="0..1" />
+          <End Role="Organisation" Type="DataModel.Store.Organisation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Organisation">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrganisationDomain_Organisation">
+          <End Role="Organisation" Type="DataModel.Store.Organisation" Multiplicity="1" />
+          <End Role="OrganisationDomain" Type="DataModel.Store.OrganisationDomain" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organisation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrganisationDomain">
+              <PropertyRef Name="OrgID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrgPrefs_Organisation">
+          <End Role="Organisation" Type="DataModel.Store.Organisation" Multiplicity="1" />
+          <End Role="OrgPrefs" Type="DataModel.Store.OrgPrefs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organisation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrgPrefs">
+              <PropertyRef Name="OrgID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_Account">
+          <End Role="Account" Type="DataModel.Store.Account" Multiplicity="1" />
+          <End Role="Payment" Type="DataModel.Store.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Account">
+          <End Role="Account" Type="DataModel.Store.Account" Multiplicity="0..1" />
+          <End Role="Person" Type="DataModel.Store.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Organisation">
+          <End Role="Organisation" Type="DataModel.Store.Organisation" Multiplicity="0..1" />
+          <End Role="Person" Type="DataModel.Store.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organisation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="OrganisationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Users">
+          <End Role="Users" Type="DataModel.Store.Users" Multiplicity="1" />
+          <End Role="Person" Type="DataModel.Store.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonPrefs_Person">
+          <End Role="Person" Type="DataModel.Store.Person" Multiplicity="1" />
+          <End Role="PersonPrefs" Type="DataModel.Store.PersonPrefs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PersonPrefs">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonSession_Person">
+          <End Role="Person" Type="DataModel.Store.Person" Multiplicity="1" />
+          <End Role="PersonSession" Type="DataModel.Store.PersonSession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PersonSession">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relationship_Person">
+          <End Role="Person" Type="DataModel.Store.Person" Multiplicity="1" />
+          <End Role="Relationship" Type="DataModel.Store.Relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Relationship">
+              <PropertyRef Name="RelatingPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relationship_Person1">
+          <End Role="Person" Type="DataModel.Store.Person" Multiplicity="1" />
+          <End Role="Relationship" Type="DataModel.Store.Relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Relationship">
+              <PropertyRef Name="RelatedPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relationship_RelationshipType">
+          <End Role="RelationshipType" Type="DataModel.Store.RelationshipType" Multiplicity="1" />
+          <End Role="Relationship" Type="DataModel.Store.Relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RelationshipType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Relationship">
+              <PropertyRef Name="RelationshipTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subscription_Account">
+          <End Role="Account" Type="DataModel.Store.Account" Multiplicity="1" />
+          <End Role="Subscription" Type="DataModel.Store.Subscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Subscription">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subscription_SubscriptionType">
+          <End Role="SubscriptionType" Type="DataModel.Store.SubscriptionType" Multiplicity="1" />
+          <End Role="Subscription" Type="DataModel.Store.Subscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubscriptionType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Subscription">
+              <PropertyRef Name="SubscriptionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tag_Person">
+          <End Role="Person" Type="DataModel.Store.Person" Multiplicity="1" />
+          <End Role="Tag" Type="DataModel.Store.Tag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tag">
+              <PropertyRef Name="CreatorPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagPerson_Person">
+          <End Role="Person" Type="DataModel.Store.Person" Multiplicity="1" />
+          <End Role="TagPerson" Type="DataModel.Store.TagPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TagPerson">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagPerson_Person1">
+          <End Role="Person" Type="DataModel.Store.Person" Multiplicity="1" />
+          <End Role="TagPerson" Type="DataModel.Store.TagPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TagPerson">
+              <PropertyRef Name="CreatorPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagPerson_Tag">
+          <End Role="Tag" Type="DataModel.Store.Tag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TagPerson" Type="DataModel.Store.TagPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TagPerson">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagPersonItem_Item">
+          <End Role="Item" Type="DataModel.Store.Item" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TagPersonItem" Type="DataModel.Store.TagPersonItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TagPersonItem">
+              <PropertyRef Name="ItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagPersonItem_Person">
+          <End Role="Person" Type="DataModel.Store.Person" Multiplicity="1" />
+          <End Role="TagPersonItem" Type="DataModel.Store.TagPersonItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TagPersonItem">
+              <PropertyRef Name="CreatorPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagPersonItem_TagPerson">
+          <End Role="TagPerson" Type="DataModel.Store.TagPerson" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TagPersonItem" Type="DataModel.Store.TagPersonItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TagPerson">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TagPersonItem">
+              <PropertyRef Name="TagPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Person">
+          <End Role="Person" Type="DataModel.Store.Person" Multiplicity="0..1" />
+          <End Role="Ticket" Type="DataModel.Store.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_TicketStatus">
+          <End Role="TicketStatus" Type="DataModel.Store.TicketStatus" Multiplicity="0..1" />
+          <End Role="Ticket" Type="DataModel.Store.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TicketStatus">
+              <PropertyRef Name="TicketStatusID" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_TicketType">
+          <End Role="TicketType" Type="DataModel.Store.TicketType" Multiplicity="1" />
+          <End Role="Ticket" Type="DataModel.Store.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TicketType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="TicketTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trackable_Item1">
+          <End Role="Item" Type="DataModel.Store.Item" Multiplicity="1" />
+          <End Role="Trackable" Type="DataModel.Store.Trackable" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Trackable">
+              <PropertyRef Name="ItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MembershipEntity_Application">
+          <End Role="Applications" Type="DataModel.Store.Applications" Multiplicity="1" />
+          <End Role="Memberships" Type="DataModel.Store.Memberships" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="Memberships">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MembershipEntity_User">
+          <End Role="Users" Type="DataModel.Store.Users" Multiplicity="1" />
+          <End Role="Memberships" Type="DataModel.Store.Memberships" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Memberships">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProfileEntity_User">
+          <End Role="Users" Type="DataModel.Store.Users" Multiplicity="1" />
+          <End Role="Profiles" Type="DataModel.Store.Profiles" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Profiles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RoleEntity_Application">
+          <End Role="Applications" Type="DataModel.Store.Applications" Multiplicity="1" />
+          <End Role="Roles" Type="DataModel.Store.Roles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="Roles">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="User_Application">
+          <End Role="Applications" Type="DataModel.Store.Applications" Multiplicity="1" />
+          <End Role="Users" Type="DataModel.Store.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UsersInRole_Role">
+          <End Role="Roles" Type="DataModel.Store.Roles" Multiplicity="1" />
+          <End Role="UsersInRoles" Type="DataModel.Store.UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UsersInRole_User">
+          <End Role="Users" Type="DataModel.Store.Users" Multiplicity="1" />
+          <End Role="UsersInRoles" Type="DataModel.Store.UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="OprioEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Accounts" EntityType="DataModel.Account" />
+          <EntitySet Name="Applications" EntityType="DataModel.Application" />
+          <EntitySet Name="Files" EntityType="DataModel.File" />
+          <EntitySet Name="FreeDomains" EntityType="DataModel.FreeDomain" />
+          <EntitySet Name="Invites" EntityType="DataModel.Invite" />
+          <EntitySet Name="Invoices" EntityType="DataModel.Invoice" />
+          <EntitySet Name="Items" EntityType="DataModel.Item" />
+          <EntitySet Name="ItemStatus" EntityType="DataModel.ItemStatu" />
+          <EntitySet Name="ItemStatusHistories" EntityType="DataModel.ItemStatusHistory" />
+          <EntitySet Name="ItemTypes" EntityType="DataModel.ItemType" />
+          <EntitySet Name="Logs" EntityType="DataModel.Log" />
+          <EntitySet Name="Memberships" EntityType="DataModel.Membership" />
+          <EntitySet Name="Organisations" EntityType="DataModel.Organisation" />
+          <EntitySet Name="OrganisationDomains" EntityType="DataModel.OrganisationDomain" />
+          <EntitySet Name="OrgPrefs" EntityType="DataModel.OrgPref" />
+          <EntitySet Name="Payments" EntityType="DataModel.Payment" />
+          <EntitySet Name="PaymentFrequencies" EntityType="DataModel.PaymentFrequency" />
+          <EntitySet Name="PaymentMethods" EntityType="DataModel.PaymentMethod" />
+          <EntitySet Name="PaymentTerms" EntityType="DataModel.PaymentTerm" />
+          <EntitySet Name="People" EntityType="DataModel.Person" />
+          <EntitySet Name="PersonPrefs" EntityType="DataModel.PersonPref" />
+          <EntitySet Name="PersonSessions" EntityType="DataModel.PersonSession" />
+          <EntitySet Name="Profiles" EntityType="DataModel.Profile" />
+          <EntitySet Name="Relationships" EntityType="DataModel.Relationship" />
+          <EntitySet Name="RelationshipTypes" EntityType="DataModel.RelationshipType" />
+          <EntitySet Name="Roles" EntityType="DataModel.Role" />
+          <EntitySet Name="Subscriptions" EntityType="DataModel.Subscription" />
+          <EntitySet Name="SubscriptionTypes" EntityType="DataModel.SubscriptionType" />
+          <EntitySet Name="Tags" EntityType="DataModel.Tag" />
+          <EntitySet Name="TagPersons" EntityType="DataModel.TagPerson" />
+          <EntitySet Name="TagPersonItems" EntityType="DataModel.TagPersonItem" />
+          <EntitySet Name="Tickets" EntityType="DataModel.Ticket" />
+          <EntitySet Name="TicketStatus" EntityType="DataModel.TicketStatu" />
+          <EntitySet Name="TicketTypes" EntityType="DataModel.TicketType" />
+          <EntitySet Name="Trackables" EntityType="DataModel.Trackable" />
+          <EntitySet Name="Users" EntityType="DataModel.User" />
+          <EntitySet Name="vwPersonUsers" EntityType="DataModel.vwPersonUser" />
+          <AssociationSet Name="FK_Account_PaymentFrequency" Association="DataModel.FK_Account_PaymentFrequency">
+            <End Role="PaymentFrequency" EntitySet="PaymentFrequencies" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_PaymentMethod" Association="DataModel.FK_Account_PaymentMethod">
+            <End Role="PaymentMethod" EntitySet="PaymentMethods" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Account_PaymentTerms" Association="DataModel.FK_Account_PaymentTerms">
+            <End Role="PaymentTerms" EntitySet="PaymentTerms" />
+            <End Role="Account" EntitySet="Accounts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoice_Account" Association="DataModel.FK_Invoice_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Invoice" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organisation_Account" Association="DataModel.FK_Organisation_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Organisation" EntitySet="Organisations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_Account" Association="DataModel.FK_Payment_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Payment" EntitySet="Payments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Account" Association="DataModel.FK_Person_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subscription_Account" Association="DataModel.FK_Subscription_Account">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Subscription" EntitySet="Subscriptions" />
+          </AssociationSet>
+          <AssociationSet Name="MembershipEntity_Application" Association="DataModel.MembershipEntity_Application">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="Memberships" EntitySet="Memberships" />
+          </AssociationSet>
+          <AssociationSet Name="RoleEntity_Application" Association="DataModel.RoleEntity_Application">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="Roles" EntitySet="Roles" />
+          </AssociationSet>
+          <AssociationSet Name="User_Application" Association="DataModel.User_Application">
+            <End Role="Applications" EntitySet="Applications" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_File_Item" Association="DataModel.FK_File_Item">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="File" EntitySet="Files" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invite_Person" Association="DataModel.FK_Invite_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Invite" EntitySet="Invites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invite_Tag" Association="DataModel.FK_Invite_Tag">
+            <End Role="Tag" EntitySet="Tags" />
+            <End Role="Invite" EntitySet="Invites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invoice_Payment" Association="DataModel.FK_Invoice_Payment">
+            <End Role="Payment" EntitySet="Payments" />
+            <End Role="Invoice" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Item_Person" Association="DataModel.FK_Item_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Item" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemStatusHistory_Item" Association="DataModel.FK_ItemStatusHistory_Item">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="ItemStatusHistory" EntitySet="ItemStatusHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_Message" Association="DataModel.FK_Message_Message">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="Item1" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Message_MessageType" Association="DataModel.FK_Message_MessageType">
+            <End Role="ItemType" EntitySet="ItemTypes" />
+            <End Role="Item" EntitySet="Items" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagPersonItem_Item" Association="DataModel.FK_TagPersonItem_Item">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="TagPersonItem" EntitySet="TagPersonItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trackable_Item1" Association="DataModel.FK_Trackable_Item1">
+            <End Role="Item" EntitySet="Items" />
+            <End Role="Trackable" EntitySet="Trackables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemStatus_ItemType" Association="DataModel.FK_ItemStatus_ItemType">
+            <End Role="ItemType" EntitySet="ItemTypes" />
+            <End Role="ItemStatus" EntitySet="ItemStatus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemStatusHistory_ItemStatus" Association="DataModel.FK_ItemStatusHistory_ItemStatus">
+            <End Role="ItemStatus" EntitySet="ItemStatus" />
+            <End Role="ItemStatusHistory" EntitySet="ItemStatusHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemStatusHistory_Person" Association="DataModel.FK_ItemStatusHistory_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="ItemStatusHistory" EntitySet="ItemStatusHistories" />
+          </AssociationSet>
+          <AssociationSet Name="MembershipEntity_User" Association="DataModel.MembershipEntity_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Memberships" EntitySet="Memberships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganisationDomain_Organisation" Association="DataModel.FK_OrganisationDomain_Organisation">
+            <End Role="Organisation" EntitySet="Organisations" />
+            <End Role="OrganisationDomain" EntitySet="OrganisationDomains" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrgPrefs_Organisation" Association="DataModel.FK_OrgPrefs_Organisation">
+            <End Role="Organisation" EntitySet="Organisations" />
+            <End Role="OrgPrefs" EntitySet="OrgPrefs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Organisation" Association="DataModel.FK_Person_Organisation">
+            <End Role="Organisation" EntitySet="Organisations" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Person_Users" Association="DataModel.FK_Person_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Person" EntitySet="People" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonPrefs_Person" Association="DataModel.FK_PersonPrefs_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="PersonPrefs" EntitySet="PersonPrefs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PersonSession_Person" Association="DataModel.FK_PersonSession_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="PersonSession" EntitySet="PersonSessions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relationship_Person" Association="DataModel.FK_Relationship_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Relationship" EntitySet="Relationships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relationship_Person1" Association="DataModel.FK_Relationship_Person1">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Relationship" EntitySet="Relationships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tag_Person" Association="DataModel.FK_Tag_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Tag" EntitySet="Tags" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagPerson_Person" Association="DataModel.FK_TagPerson_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="TagPerson" EntitySet="TagPersons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagPerson_Person1" Association="DataModel.FK_TagPerson_Person1">
+            <End Role="Person" EntitySet="People" />
+            <End Role="TagPerson" EntitySet="TagPersons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagPersonItem_Person" Association="DataModel.FK_TagPersonItem_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="TagPersonItem" EntitySet="TagPersonItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_Person" Association="DataModel.FK_Ticket_Person">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Ticket" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="ProfileEntity_User" Association="DataModel.ProfileEntity_User">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Profiles" EntitySet="Profiles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Relationship_RelationshipType" Association="DataModel.FK_Relationship_RelationshipType">
+            <End Role="RelationshipType" EntitySet="RelationshipTypes" />
+            <End Role="Relationship" EntitySet="Relationships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subscription_SubscriptionType" Association="DataModel.FK_Subscription_SubscriptionType">
+            <End Role="SubscriptionType" EntitySet="SubscriptionTypes" />
+            <End Role="Subscription" EntitySet="Subscriptions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagPerson_Tag" Association="DataModel.FK_TagPerson_Tag">
+            <End Role="Tag" EntitySet="Tags" />
+            <End Role="TagPerson" EntitySet="TagPersons" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagPersonItem_TagPerson" Association="DataModel.FK_TagPersonItem_TagPerson">
+            <End Role="TagPerson" EntitySet="TagPersons" />
+            <End Role="TagPersonItem" EntitySet="TagPersonItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_TicketStatus" Association="DataModel.FK_Ticket_TicketStatus">
+            <End Role="TicketStatus" EntitySet="TicketStatus" />
+            <End Role="Ticket" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ticket_TicketType" Association="DataModel.FK_Ticket_TicketType">
+            <End Role="TicketType" EntitySet="TicketTypes" />
+            <End Role="Ticket" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="UsersInRoles" Association="DataModel.UsersInRoles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <EntitySet Name="UserProfiles" EntityType="DataModel.UserProfile" />
+        </EntityContainer>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="BillingName" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="AddressLine1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="AddressLine2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="State" Type="String" MaxLength="2" Unicode="true" FixedLength="true" />
+          <Property Name="ZipCode" Type="String" MaxLength="5" Unicode="true" FixedLength="true" />
+          <Property Name="ContactName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ContactPhone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="ContactEmail" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsBusinessAccount" Type="Boolean" Nullable="false" />
+          <Property Name="DisplayName" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="TechnicalContactName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TechnicalContactPhone" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="TechnicalContactEmail" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="PaymentMethodID" Type="Int32" />
+          <Property Name="PaymentFrequencyID" Type="Int32" />
+          <Property Name="PaymentTermsID" Type="Int32" />
+          <Property Name="StorageUsageMB" Type="Int32" Nullable="false" />
+          <Property Name="ChargeSalesTax" Type="Boolean" Nullable="false" />
+          <Property Name="SalesTaxRef" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="PaymentFrequency" Relationship="DataModel.FK_Account_PaymentFrequency" FromRole="Account" ToRole="PaymentFrequency" />
+          <NavigationProperty Name="PaymentMethod" Relationship="DataModel.FK_Account_PaymentMethod" FromRole="Account" ToRole="PaymentMethod" />
+          <NavigationProperty Name="PaymentTerm" Relationship="DataModel.FK_Account_PaymentTerms" FromRole="Account" ToRole="PaymentTerms" />
+          <NavigationProperty Name="Invoices" Relationship="DataModel.FK_Invoice_Account" FromRole="Account" ToRole="Invoice" />
+          <NavigationProperty Name="Organisations" Relationship="DataModel.FK_Organisation_Account" FromRole="Account" ToRole="Organisation" />
+          <NavigationProperty Name="Payments" Relationship="DataModel.FK_Payment_Account" FromRole="Account" ToRole="Payment" />
+          <NavigationProperty Name="People" Relationship="DataModel.FK_Person_Account" FromRole="Account" ToRole="Person" />
+          <NavigationProperty Name="Subscriptions" Relationship="DataModel.FK_Subscription_Account" FromRole="Account" ToRole="Subscription" />
+        </EntityType>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="235" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Memberships" Relationship="DataModel.MembershipEntity_Application" FromRole="Applications" ToRole="Memberships" />
+          <NavigationProperty Name="Roles" Relationship="DataModel.RoleEntity_Application" FromRole="Applications" ToRole="Roles" />
+          <NavigationProperty Name="Users" Relationship="DataModel.User_Application" FromRole="Applications" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="File">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="RevisionNumber" Type="Int32" Nullable="false" />
+          <Property Name="MimeType" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="Size" Type="Int32" Nullable="false" />
+          <Property Name="ItemID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Item" Relationship="DataModel.FK_File_Item" FromRole="File" ToRole="Item" />
+        </EntityType>
+        <EntityType Name="FreeDomain">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Domain" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Domain" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Invite">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="InvitedByPersonID" Type="Guid" Nullable="false" />
+          <Property Name="TagID" Type="Guid" Nullable="false" />
+          <Property Name="SendDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpireDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Person" Relationship="DataModel.FK_Invite_Person" FromRole="Invite" ToRole="Person" />
+          <NavigationProperty Name="Tag" Relationship="DataModel.FK_Invite_Tag" FromRole="Invite" ToRole="Tag" />
+        </EntityType>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="InvoiceNumber" Type="Int32" Nullable="false" />
+          <Property Name="InvoiceDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="NetInvoiceAmount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="TaxAmount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="TaxRate" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="GrossInvoiceAmount" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="InvoideDueDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AccountID" Type="Guid" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="IsPaid" Type="Boolean" Nullable="false" />
+          <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="PaymentID" Type="Guid" />
+          <NavigationProperty Name="Account" Relationship="DataModel.FK_Invoice_Account" FromRole="Invoice" ToRole="Account" />
+          <NavigationProperty Name="Payment" Relationship="DataModel.FK_Invoice_Payment" FromRole="Invoice" ToRole="Payment" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="ItemText" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ParentItemID" Type="Guid" />
+          <Property Name="ItemLevel" Type="Byte" Nullable="false" />
+          <Property Name="ItemTypeID" Type="Int32" Nullable="false" />
+          <Property Name="CreationTimestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedTimestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatorPersonID" Type="Guid" />
+          <NavigationProperty Name="Files" Relationship="DataModel.FK_File_Item" FromRole="Item" ToRole="File" />
+          <NavigationProperty Name="Person" Relationship="DataModel.FK_Item_Person" FromRole="Item" ToRole="Person" />
+          <NavigationProperty Name="ItemStatusHistories" Relationship="DataModel.FK_ItemStatusHistory_Item" FromRole="Item" ToRole="ItemStatusHistory" />
+          <NavigationProperty Name="Item1" Relationship="DataModel.FK_Message_Message" FromRole="Item" ToRole="Item1" />
+          <NavigationProperty Name="Item2" Relationship="DataModel.FK_Message_Message" FromRole="Item1" ToRole="Item" />
+          <NavigationProperty Name="ItemType" Relationship="DataModel.FK_Message_MessageType" FromRole="Item" ToRole="ItemType" />
+          <NavigationProperty Name="TagPersonItems" Relationship="DataModel.FK_TagPersonItem_Item" FromRole="Item" ToRole="TagPersonItem" />
+          <NavigationProperty Name="Trackable" Relationship="DataModel.FK_Trackable_Item1" FromRole="Item" ToRole="Trackable" />
+        </EntityType>
+        <EntityType Name="ItemStatu">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="ItemTypeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ItemType" Relationship="DataModel.FK_ItemStatus_ItemType" FromRole="ItemStatus" ToRole="ItemType" />
+          <NavigationProperty Name="ItemStatusHistories" Relationship="DataModel.FK_ItemStatusHistory_ItemStatus" FromRole="ItemStatus" ToRole="ItemStatusHistory" />
+        </EntityType>
+        <EntityType Name="ItemStatusHistory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="ItemID" Type="Guid" />
+          <Property Name="ItemStatusID" Type="Int32" Nullable="false" />
+          <Property Name="SetAtTimestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SetByPersonID" Type="Guid" Nullable="false" />
+          <Property Name="Value" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Item" Relationship="DataModel.FK_ItemStatusHistory_Item" FromRole="ItemStatusHistory" ToRole="Item" />
+          <NavigationProperty Name="ItemStatu" Relationship="DataModel.FK_ItemStatusHistory_ItemStatus" FromRole="ItemStatusHistory" ToRole="ItemStatus" />
+          <NavigationProperty Name="Person" Relationship="DataModel.FK_ItemStatusHistory_Person" FromRole="ItemStatusHistory" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="ItemType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Items" Relationship="DataModel.FK_Message_MessageType" FromRole="ItemType" ToRole="Item" />
+          <NavigationProperty Name="ItemStatus" Relationship="DataModel.FK_ItemStatus_ItemType" FromRole="ItemType" ToRole="ItemStatus" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Thread" />
+            <PropertyRef Name="Level" />
+            <PropertyRef Name="Logger" />
+            <PropertyRef Name="Message" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Thread" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Level" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Logger" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="4000" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+          <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordQuestion" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordAnswer" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowsStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Comment" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Application" Relationship="DataModel.MembershipEntity_Application" FromRole="Memberships" ToRole="Applications" />
+          <NavigationProperty Name="User" Relationship="DataModel.MembershipEntity_User" FromRole="Memberships" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Organisation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="SignupDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="PublicKey" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="PrivateKey" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="Handle" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="AccountID" Type="Guid" />
+          <NavigationProperty Name="Account" Relationship="DataModel.FK_Organisation_Account" FromRole="Organisation" ToRole="Account" />
+          <NavigationProperty Name="OrganisationDomains" Relationship="DataModel.FK_OrganisationDomain_Organisation" FromRole="Organisation" ToRole="OrganisationDomain" />
+          <NavigationProperty Name="OrgPrefs" Relationship="DataModel.FK_OrgPrefs_Organisation" FromRole="Organisation" ToRole="OrgPrefs" />
+          <NavigationProperty Name="People" Relationship="DataModel.FK_Person_Organisation" FromRole="Organisation" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="OrganisationDomain">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="OrgID" Type="Guid" Nullable="false" />
+          <Property Name="Domain" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Organisation" Relationship="DataModel.FK_OrganisationDomain_Organisation" FromRole="OrganisationDomain" ToRole="Organisation" />
+        </EntityType>
+        <EntityType Name="OrgPref">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="OrgID" Type="Guid" Nullable="false" />
+          <Property Name="PrefKey" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="PrefValue" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Organisation" Relationship="DataModel.FK_OrgPrefs_Organisation" FromRole="OrgPrefs" ToRole="Organisation" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="PaymentDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="TransactionRef" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="AccountID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="DataModel.FK_Payment_Account" FromRole="Payment" ToRole="Account" />
+          <NavigationProperty Name="Invoices" Relationship="DataModel.FK_Invoice_Payment" FromRole="Payment" ToRole="Invoice" />
+        </EntityType>
+        <EntityType Name="PaymentFrequency">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="PeriodMonths" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Accounts" Relationship="DataModel.FK_Account_PaymentFrequency" FromRole="PaymentFrequency" ToRole="Account" />
+        </EntityType>
+        <EntityType Name="PaymentMethod">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Accounts" Relationship="DataModel.FK_Account_PaymentMethod" FromRole="PaymentMethod" ToRole="Account" />
+        </EntityType>
+        <EntityType Name="PaymentTerm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="PeriodDays" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Accounts" Relationship="DataModel.FK_Account_PaymentTerms" FromRole="PaymentTerms" ToRole="Account" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Position" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="OrganisationID" Type="Guid" />
+          <Property Name="CreationTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="AccountID" Type="Guid" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Account" Relationship="DataModel.FK_Person_Account" FromRole="Person" ToRole="Account" />
+          <NavigationProperty Name="Invites" Relationship="DataModel.FK_Invite_Person" FromRole="Person" ToRole="Invite" />
+          <NavigationProperty Name="Items" Relationship="DataModel.FK_Item_Person" FromRole="Person" ToRole="Item" />
+          <NavigationProperty Name="ItemStatusHistories" Relationship="DataModel.FK_ItemStatusHistory_Person" FromRole="Person" ToRole="ItemStatusHistory" />
+          <NavigationProperty Name="Organisation" Relationship="DataModel.FK_Person_Organisation" FromRole="Person" ToRole="Organisation" />
+          <NavigationProperty Name="User" Relationship="DataModel.FK_Person_Users" FromRole="Person" ToRole="Users" />
+          <NavigationProperty Name="PersonPrefs" Relationship="DataModel.FK_PersonPrefs_Person" FromRole="Person" ToRole="PersonPrefs" />
+          <NavigationProperty Name="PersonSessions" Relationship="DataModel.FK_PersonSession_Person" FromRole="Person" ToRole="PersonSession" />
+          <NavigationProperty Name="Relationships" Relationship="DataModel.FK_Relationship_Person" FromRole="Person" ToRole="Relationship" />
+          <NavigationProperty Name="Relationships1" Relationship="DataModel.FK_Relationship_Person1" FromRole="Person" ToRole="Relationship" />
+          <NavigationProperty Name="Tags" Relationship="DataModel.FK_Tag_Person" FromRole="Person" ToRole="Tag" />
+          <NavigationProperty Name="TagPersons" Relationship="DataModel.FK_TagPerson_Person" FromRole="Person" ToRole="TagPerson" />
+          <NavigationProperty Name="TagPersons1" Relationship="DataModel.FK_TagPerson_Person1" FromRole="Person" ToRole="TagPerson" />
+          <NavigationProperty Name="TagPersonItems" Relationship="DataModel.FK_TagPersonItem_Person" FromRole="Person" ToRole="TagPersonItem" />
+          <NavigationProperty Name="Tickets" Relationship="DataModel.FK_Ticket_Person" FromRole="Person" ToRole="Ticket" />
+        </EntityType>
+        <EntityType Name="PersonPref">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="PersonID" Type="Guid" Nullable="false" />
+          <Property Name="PrefKey" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <Property Name="PrefValue" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Person" Relationship="DataModel.FK_PersonPrefs_Person" FromRole="PersonPrefs" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="PersonSession">
+          <Key>
+            <PropertyRef Name="ConnectionID" />
+          </Key>
+          <Property Name="ConnectionID" Type="Guid" Nullable="false" />
+          <Property Name="PersonID" Type="Guid" Nullable="false" />
+          <Property Name="IPAddress" Type="String" Nullable="false" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="UserAgent" Type="String" Nullable="false" MaxLength="128" Unicode="false" FixedLength="false" />
+          <Property Name="ConnectTimestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DisconnectTimestamp" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Person" Relationship="DataModel.FK_PersonSession_Person" FromRole="PersonSession" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="PropertyNames" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PropertyValueStrings" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PropertyValueBinary" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="User" Relationship="DataModel.ProfileEntity_User" FromRole="Profiles" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Relationship">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="RelatingPersonID" Type="Guid" Nullable="false" />
+          <Property Name="RelatedPersonID" Type="Guid" Nullable="false" />
+          <Property Name="RelationshipTypeID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="DataModel.FK_Relationship_Person" FromRole="Relationship" ToRole="Person" />
+          <NavigationProperty Name="Person1" Relationship="DataModel.FK_Relationship_Person1" FromRole="Relationship" ToRole="Person" />
+          <NavigationProperty Name="RelationshipType" Relationship="DataModel.FK_Relationship_RelationshipType" FromRole="Relationship" ToRole="RelationshipType" />
+        </EntityType>
+        <EntityType Name="RelationshipType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="16" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Relationships" Relationship="DataModel.FK_Relationship_RelationshipType" FromRole="RelationshipType" ToRole="Relationship" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Application" Relationship="DataModel.RoleEntity_Application" FromRole="Roles" ToRole="Applications" />
+          <NavigationProperty Name="Users" Relationship="DataModel.UsersInRoles" FromRole="Roles" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Subscription">
+          <Key>
+            <PropertyRef Name="SubscriptionID" />
+          </Key>
+          <Property Name="SubscriptionID" Type="Guid" Nullable="false" />
+          <Property Name="AccountID" Type="Guid" Nullable="false" />
+          <Property Name="SubscriptionTypeID" Type="Int32" Nullable="false" />
+          <Property Name="PriceUserMonth" Type="Decimal" Nullable="false" Precision="8" Scale="2" />
+          <Property Name="MinUsers" Type="Int32" Nullable="false" />
+          <Property Name="MaxUsers" Type="Int32" Nullable="false" />
+          <Property Name="UserCount" Type="Int32" Nullable="false" />
+          <Property Name="MinTermMonths" Type="Int32" Nullable="false" />
+          <Property Name="IsRolling" Type="Boolean" Nullable="false" />
+          <Property Name="BaseStorageMB" Type="Int32" Nullable="false" />
+          <Property Name="AdditinalStorageUserMB" Type="Int32" Nullable="false" />
+          <Property Name="MaxConversationItems" Type="Int32" Nullable="false" />
+          <Property Name="EnabledFeatures" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedByPersonID" Type="Guid" Nullable="false" />
+          <Property Name="DateModified" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ModifiedByPersonID" Type="Guid" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CancellationCutoffDays" Type="Int32" Nullable="false" />
+          <Property Name="CancellationCutoffDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsTrial" Type="Boolean" Nullable="false" />
+          <Property Name="TrialEndDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Account" Relationship="DataModel.FK_Subscription_Account" FromRole="Subscription" ToRole="Account" />
+          <NavigationProperty Name="SubscriptionType" Relationship="DataModel.FK_Subscription_SubscriptionType" FromRole="Subscription" ToRole="SubscriptionType" />
+        </EntityType>
+        <EntityType Name="SubscriptionType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="64" Unicode="true" FixedLength="false" />
+          <Property Name="PriceUserMonth" Type="Decimal" Nullable="false" Precision="8" Scale="2" />
+          <Property Name="MinUsers" Type="Int32" Nullable="false" />
+          <Property Name="MaxUsers" Type="Int32" Nullable="false" />
+          <Property Name="MinTermMonths" Type="Int32" Nullable="false" />
+          <Property Name="IsRolling" Type="Boolean" Nullable="false" />
+          <Property Name="BaseStorageMB" Type="Int32" Nullable="false" />
+          <Property Name="AdditinalStorageUserMB" Type="Int32" Nullable="false" />
+          <Property Name="MaxConversationItems" Type="Int32" Nullable="false" />
+          <Property Name="EnabledFeatures" Type="String" Nullable="false" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="CancellationCutoffDays" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsBusiness" Type="Boolean" />
+          <NavigationProperty Name="Subscriptions" Relationship="DataModel.FK_Subscription_SubscriptionType" FromRole="SubscriptionType" ToRole="Subscription" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreationTimestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatorPersonID" Type="Guid" Nullable="false" />
+          <Property Name="IsConversation" Type="Boolean" Nullable="false" />
+          <Property Name="IsSystem" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Invites" Relationship="DataModel.FK_Invite_Tag" FromRole="Tag" ToRole="Invite" />
+          <NavigationProperty Name="Person" Relationship="DataModel.FK_Tag_Person" FromRole="Tag" ToRole="Person" />
+          <NavigationProperty Name="TagPersons" Relationship="DataModel.FK_TagPerson_Tag" FromRole="Tag" ToRole="TagPerson" />
+        </EntityType>
+        <EntityType Name="TagPerson">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="TagID" Type="Guid" Nullable="false" />
+          <Property Name="PersonID" Type="Guid" Nullable="false" />
+          <Property Name="CreationTimestamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatorPersonID" Type="Guid" Nullable="false" />
+          <Property Name="LastAccessed" Type="DateTime" Precision="3" />
+          <Property Name="Rank" Type="Int32" Nullable="false" />
+          <Property Name="Importance" Type="Double" Nullable="false" />
+          <Property Name="Pinned" Type="DateTime" Precision="3" />
+          <Property Name="Archived" Type="DateTime" Precision="3" />
+          <Property Name="Deferred" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Person" Relationship="DataModel.FK_TagPerson_Person" FromRole="TagPerson" ToRole="Person" />
+          <NavigationProperty Name="Person1" Relationship="DataModel.FK_TagPerson_Person1" FromRole="TagPerson" ToRole="Person" />
+          <NavigationProperty Name="Tag" Relationship="DataModel.FK_TagPerson_Tag" FromRole="TagPerson" ToRole="Tag" />
+          <NavigationProperty Name="TagPersonItems" Relationship="DataModel.FK_TagPersonItem_TagPerson" FromRole="TagPerson" ToRole="TagPersonItem" />
+        </EntityType>
+        <EntityType Name="TagPersonItem">
+          <Key>
+            <PropertyRef Name="TagPersonID" />
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="TagPersonID" Type="Guid" Nullable="false" />
+          <Property Name="ItemID" Type="Guid" Nullable="false" />
+          <Property Name="IsViewed" Type="Boolean" Nullable="false" />
+          <Property Name="ViewedTimeStamp" Type="DateTime" Precision="3" />
+          <Property Name="CreatorPersonID" Type="Guid" Nullable="false" />
+          <Property Name="CreationTimeStamp" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Rank" Type="Int32" Nullable="false" />
+          <Property Name="Importance" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Item" Relationship="DataModel.FK_TagPersonItem_Item" FromRole="TagPersonItem" ToRole="Item" />
+          <NavigationProperty Name="Person" Relationship="DataModel.FK_TagPersonItem_Person" FromRole="TagPersonItem" ToRole="Person" />
+          <NavigationProperty Name="TagPerson" Relationship="DataModel.FK_TagPersonItem_TagPerson" FromRole="TagPersonItem" ToRole="TagPerson" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Guid" Nullable="false" />
+          <Property Name="TicketTypeID" Type="Int32" Nullable="false" />
+          <Property Name="IssueDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpireDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TicketRef" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PersonID" Type="Guid" />
+          <Property Name="StatusID" Type="Int32" />
+          <NavigationProperty Name="Person" Relationship="DataModel.FK_Ticket_Person" FromRole="Ticket" ToRole="Person" />
+          <NavigationProperty Name="TicketStatu" Relationship="DataModel.FK_Ticket_TicketStatus" FromRole="Ticket" ToRole="TicketStatus" />
+          <NavigationProperty Name="TicketType" Relationship="DataModel.FK_Ticket_TicketType" FromRole="Ticket" ToRole="TicketType" />
+        </EntityType>
+        <EntityType Name="TicketStatu">
+          <Key>
+            <PropertyRef Name="TicketStatusID" />
+          </Key>
+          <Property Name="TicketStatusID" Type="Int32" Nullable="false" />
+          <Property Name="TicketStatus" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Tickets" Relationship="DataModel.FK_Ticket_TicketStatus" FromRole="TicketStatus" ToRole="Ticket" />
+        </EntityType>
+        <EntityType Name="TicketType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="TicketTypeName" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Tickets" Relationship="DataModel.FK_Ticket_TicketType" FromRole="TicketType" ToRole="Ticket" />
+        </EntityType>
+        <EntityType Name="Trackable">
+          <Key>
+            <PropertyRef Name="ItemID" />
+          </Key>
+          <Property Name="ItemID" Type="Guid" Nullable="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="DueDate" Type="DateTime" Precision="3" />
+          <Property Name="AssigneePersonID" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Item" Relationship="DataModel.FK_Trackable_Item1" FromRole="Trackable" ToRole="Item" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+          <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Application" Relationship="DataModel.User_Application" FromRole="Users" ToRole="Applications" />
+          <NavigationProperty Name="Membership" Relationship="DataModel.MembershipEntity_User" FromRole="Users" ToRole="Memberships" />
+          <NavigationProperty Name="People" Relationship="DataModel.FK_Person_Users" FromRole="Users" ToRole="Person" />
+          <NavigationProperty Name="Profile" Relationship="DataModel.ProfileEntity_User" FromRole="Users" ToRole="Profiles" />
+          <NavigationProperty Name="Roles" Relationship="DataModel.UsersInRoles" FromRole="Users" ToRole="Roles" />
+        </EntityType>
+        <EntityType Name="vwPersonUser">
+          <Key>
+            <PropertyRef Name="PersonID" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="UserID" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="RoleName" />
+          </Key>
+          <Property Name="PersonID" Type="Guid" Nullable="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UserID" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OrganisationID" Type="Guid" />
+          <Property Name="Email" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Account_PaymentFrequency">
+          <End Role="PaymentFrequency" Type="DataModel.PaymentFrequency" Multiplicity="0..1" />
+          <End Role="Account" Type="DataModel.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentFrequency">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="PaymentFrequencyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_PaymentMethod">
+          <End Role="PaymentMethod" Type="DataModel.PaymentMethod" Multiplicity="0..1" />
+          <End Role="Account" Type="DataModel.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentMethod">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="PaymentMethodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Account_PaymentTerms">
+          <End Role="PaymentTerms" Type="DataModel.PaymentTerm" Multiplicity="0..1" />
+          <End Role="Account" Type="DataModel.Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentTerms">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Account">
+              <PropertyRef Name="PaymentTermsID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoice_Account">
+          <End Role="Account" Type="DataModel.Account" Multiplicity="1" />
+          <End Role="Invoice" Type="DataModel.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organisation_Account">
+          <End Role="Account" Type="DataModel.Account" Multiplicity="0..1" />
+          <End Role="Organisation" Type="DataModel.Organisation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Organisation">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_Account">
+          <End Role="Account" Type="DataModel.Account" Multiplicity="1" />
+          <End Role="Payment" Type="DataModel.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Account">
+          <End Role="Account" Type="DataModel.Account" Multiplicity="0..1" />
+          <End Role="Person" Type="DataModel.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subscription_Account">
+          <End Role="Account" Type="DataModel.Account" Multiplicity="1" />
+          <End Role="Subscription" Type="DataModel.Subscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Account">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Subscription">
+              <PropertyRef Name="AccountID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MembershipEntity_Application">
+          <End Role="Applications" Type="DataModel.Application" Multiplicity="1" />
+          <End Role="Memberships" Type="DataModel.Membership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="Memberships">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RoleEntity_Application">
+          <End Role="Applications" Type="DataModel.Application" Multiplicity="1" />
+          <End Role="Roles" Type="DataModel.Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="Roles">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="User_Application">
+          <End Role="Applications" Type="DataModel.Application" Multiplicity="1" />
+          <End Role="Users" Type="DataModel.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Applications">
+              <PropertyRef Name="ApplicationId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="ApplicationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_File_Item">
+          <End Role="Item" Type="DataModel.Item" Multiplicity="1" />
+          <End Role="File" Type="DataModel.File" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="File">
+              <PropertyRef Name="ItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invite_Person">
+          <End Role="Person" Type="DataModel.Person" Multiplicity="1" />
+          <End Role="Invite" Type="DataModel.Invite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invite">
+              <PropertyRef Name="InvitedByPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invite_Tag">
+          <End Role="Tag" Type="DataModel.Tag" Multiplicity="1" />
+          <End Role="Invite" Type="DataModel.Invite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invite">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invoice_Payment">
+          <End Role="Payment" Type="DataModel.Payment" Multiplicity="0..1" />
+          <End Role="Invoice" Type="DataModel.Invoice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payment">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invoice">
+              <PropertyRef Name="PaymentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Item_Person">
+          <End Role="Person" Type="DataModel.Person" Multiplicity="0..1" />
+          <End Role="Item" Type="DataModel.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="CreatorPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemStatusHistory_Item">
+          <End Role="Item" Type="DataModel.Item" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ItemStatusHistory" Type="DataModel.ItemStatusHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemStatusHistory">
+              <PropertyRef Name="ItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_Message">
+          <End Role="Item" Type="DataModel.Item" Multiplicity="0..1" />
+          <End Role="Item1" Type="DataModel.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Item1">
+              <PropertyRef Name="ParentItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Message_MessageType">
+          <End Role="ItemType" Type="DataModel.ItemType" Multiplicity="1" />
+          <End Role="Item" Type="DataModel.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="ItemTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagPersonItem_Item">
+          <End Role="Item" Type="DataModel.Item" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TagPersonItem" Type="DataModel.TagPersonItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TagPersonItem">
+              <PropertyRef Name="ItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trackable_Item1">
+          <End Role="Item" Type="DataModel.Item" Multiplicity="1" />
+          <End Role="Trackable" Type="DataModel.Trackable" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Trackable">
+              <PropertyRef Name="ItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemStatus_ItemType">
+          <End Role="ItemType" Type="DataModel.ItemType" Multiplicity="1" />
+          <End Role="ItemStatus" Type="DataModel.ItemStatu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemStatus">
+              <PropertyRef Name="ItemTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemStatusHistory_ItemStatus">
+          <End Role="ItemStatus" Type="DataModel.ItemStatu" Multiplicity="1" />
+          <End Role="ItemStatusHistory" Type="DataModel.ItemStatusHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ItemStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemStatusHistory">
+              <PropertyRef Name="ItemStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemStatusHistory_Person">
+          <End Role="Person" Type="DataModel.Person" Multiplicity="1" />
+          <End Role="ItemStatusHistory" Type="DataModel.ItemStatusHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ItemStatusHistory">
+              <PropertyRef Name="SetByPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="MembershipEntity_User">
+          <End Role="Users" Type="DataModel.User" Multiplicity="1" />
+          <End Role="Memberships" Type="DataModel.Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Memberships">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrganisationDomain_Organisation">
+          <End Role="Organisation" Type="DataModel.Organisation" Multiplicity="1" />
+          <End Role="OrganisationDomain" Type="DataModel.OrganisationDomain" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organisation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrganisationDomain">
+              <PropertyRef Name="OrgID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrgPrefs_Organisation">
+          <End Role="Organisation" Type="DataModel.Organisation" Multiplicity="1" />
+          <End Role="OrgPrefs" Type="DataModel.OrgPref" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organisation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="OrgPrefs">
+              <PropertyRef Name="OrgID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Organisation">
+          <End Role="Organisation" Type="DataModel.Organisation" Multiplicity="0..1" />
+          <End Role="Person" Type="DataModel.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organisation">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="OrganisationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Person_Users">
+          <End Role="Users" Type="DataModel.User" Multiplicity="1" />
+          <End Role="Person" Type="DataModel.Person" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Person">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonPrefs_Person">
+          <End Role="Person" Type="DataModel.Person" Multiplicity="1" />
+          <End Role="PersonPrefs" Type="DataModel.PersonPref" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PersonPrefs">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PersonSession_Person">
+          <End Role="Person" Type="DataModel.Person" Multiplicity="1" />
+          <End Role="PersonSession" Type="DataModel.PersonSession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="PersonSession">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relationship_Person">
+          <End Role="Person" Type="DataModel.Person" Multiplicity="1" />
+          <End Role="Relationship" Type="DataModel.Relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Relationship">
+              <PropertyRef Name="RelatingPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relationship_Person1">
+          <End Role="Person" Type="DataModel.Person" Multiplicity="1" />
+          <End Role="Relationship" Type="DataModel.Relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Relationship">
+              <PropertyRef Name="RelatedPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tag_Person">
+          <End Role="Person" Type="DataModel.Person" Multiplicity="1" />
+          <End Role="Tag" Type="DataModel.Tag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tag">
+              <PropertyRef Name="CreatorPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagPerson_Person">
+          <End Role="Person" Type="DataModel.Person" Multiplicity="1" />
+          <End Role="TagPerson" Type="DataModel.TagPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TagPerson">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagPerson_Person1">
+          <End Role="Person" Type="DataModel.Person" Multiplicity="1" />
+          <End Role="TagPerson" Type="DataModel.TagPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TagPerson">
+              <PropertyRef Name="CreatorPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagPersonItem_Person">
+          <End Role="Person" Type="DataModel.Person" Multiplicity="1" />
+          <End Role="TagPersonItem" Type="DataModel.TagPersonItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TagPersonItem">
+              <PropertyRef Name="CreatorPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_Person">
+          <End Role="Person" Type="DataModel.Person" Multiplicity="0..1" />
+          <End Role="Ticket" Type="DataModel.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProfileEntity_User">
+          <End Role="Users" Type="DataModel.User" Multiplicity="1" />
+          <End Role="Profiles" Type="DataModel.Profile" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Profiles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Relationship_RelationshipType">
+          <End Role="RelationshipType" Type="DataModel.RelationshipType" Multiplicity="1" />
+          <End Role="Relationship" Type="DataModel.Relationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RelationshipType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Relationship">
+              <PropertyRef Name="RelationshipTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subscription_SubscriptionType">
+          <End Role="SubscriptionType" Type="DataModel.SubscriptionType" Multiplicity="1" />
+          <End Role="Subscription" Type="DataModel.Subscription" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubscriptionType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Subscription">
+              <PropertyRef Name="SubscriptionTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagPerson_Tag">
+          <End Role="Tag" Type="DataModel.Tag" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TagPerson" Type="DataModel.TagPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TagPerson">
+              <PropertyRef Name="TagID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagPersonItem_TagPerson">
+          <End Role="TagPerson" Type="DataModel.TagPerson" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TagPersonItem" Type="DataModel.TagPersonItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TagPerson">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TagPersonItem">
+              <PropertyRef Name="TagPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_TicketStatus">
+          <End Role="TicketStatus" Type="DataModel.TicketStatu" Multiplicity="0..1" />
+          <End Role="Ticket" Type="DataModel.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TicketStatus">
+              <PropertyRef Name="TicketStatusID" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ticket_TicketType">
+          <End Role="TicketType" Type="DataModel.TicketType" Multiplicity="1" />
+          <End Role="Ticket" Type="DataModel.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TicketType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Ticket">
+              <PropertyRef Name="TicketTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UsersInRoles">
+          <End Role="Roles" Type="DataModel.Role" Multiplicity="*" />
+          <End Role="Users" Type="DataModel.User" Multiplicity="*" />
+        </Association>
+        <EntityType Name="UserProfile">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="UserName" Nullable="false" MaxLength="56" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Email" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DataModelStoreContainer" CdmEntityContainer="OprioEntities">
+          <EntitySetMapping Name="Accounts">
+            <EntityTypeMapping TypeName="DataModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BillingName" ColumnName="BillingName" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsBusinessAccount" ColumnName="IsBusinessAccount" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="TechnicalContactName" ColumnName="TechnicalContactName" />
+                <ScalarProperty Name="TechnicalContactPhone" ColumnName="TechnicalContactPhone" />
+                <ScalarProperty Name="TechnicalContactEmail" ColumnName="TechnicalContactEmail" />
+                <ScalarProperty Name="PaymentMethodID" ColumnName="PaymentMethodID" />
+                <ScalarProperty Name="PaymentFrequencyID" ColumnName="PaymentFrequencyID" />
+                <ScalarProperty Name="PaymentTermsID" ColumnName="PaymentTermsID" />
+                <ScalarProperty Name="StorageUsageMB" ColumnName="StorageUsageMB" />
+                <ScalarProperty Name="ChargeSalesTax" ColumnName="ChargeSalesTax" />
+                <ScalarProperty Name="SalesTaxRef" ColumnName="SalesTaxRef" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Applications">
+            <EntityTypeMapping TypeName="DataModel.Application">
+              <MappingFragment StoreEntitySet="Applications">
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Files">
+            <EntityTypeMapping TypeName="DataModel.File">
+              <MappingFragment StoreEntitySet="File">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RevisionNumber" ColumnName="RevisionNumber" />
+                <ScalarProperty Name="MimeType" ColumnName="MimeType" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FreeDomains">
+            <EntityTypeMapping TypeName="DataModel.FreeDomain">
+              <MappingFragment StoreEntitySet="FreeDomains">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Domain" ColumnName="Domain" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invites">
+            <EntityTypeMapping TypeName="DataModel.Invite">
+              <MappingFragment StoreEntitySet="Invite">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="InvitedByPersonID" ColumnName="InvitedByPersonID" />
+                <ScalarProperty Name="TagID" ColumnName="TagID" />
+                <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+                <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoices">
+            <EntityTypeMapping TypeName="DataModel.Invoice">
+              <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="NetInvoiceAmount" ColumnName="NetInvoiceAmount" />
+                <ScalarProperty Name="TaxAmount" ColumnName="TaxAmount" />
+                <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+                <ScalarProperty Name="GrossInvoiceAmount" ColumnName="GrossInvoiceAmount" />
+                <ScalarProperty Name="InvoideDueDate" ColumnName="InvoideDueDate" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Items">
+            <EntityTypeMapping TypeName="DataModel.Item">
+              <MappingFragment StoreEntitySet="Item">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ItemText" ColumnName="ItemText" />
+                <ScalarProperty Name="ParentItemID" ColumnName="ParentItemID" />
+                <ScalarProperty Name="ItemLevel" ColumnName="ItemLevel" />
+                <ScalarProperty Name="ItemTypeID" ColumnName="ItemTypeID" />
+                <ScalarProperty Name="CreationTimestamp" ColumnName="CreationTimestamp" />
+                <ScalarProperty Name="ModifiedTimestamp" ColumnName="ModifiedTimestamp" />
+                <ScalarProperty Name="CreatorPersonID" ColumnName="CreatorPersonID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemStatus">
+            <EntityTypeMapping TypeName="DataModel.ItemStatu">
+              <MappingFragment StoreEntitySet="ItemStatus">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ItemTypeID" ColumnName="ItemTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemStatusHistories">
+            <EntityTypeMapping TypeName="DataModel.ItemStatusHistory">
+              <MappingFragment StoreEntitySet="ItemStatusHistory">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="ItemStatusID" ColumnName="ItemStatusID" />
+                <ScalarProperty Name="SetAtTimestamp" ColumnName="SetAtTimestamp" />
+                <ScalarProperty Name="SetByPersonID" ColumnName="SetByPersonID" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemTypes">
+            <EntityTypeMapping TypeName="DataModel.ItemType">
+              <MappingFragment StoreEntitySet="ItemType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="DataModel.Log">
+              <MappingFragment StoreEntitySet="Log">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Thread" ColumnName="Thread" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Logger" ColumnName="Logger" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Memberships">
+            <EntityTypeMapping TypeName="DataModel.Membership">
+              <MappingFragment StoreEntitySet="Memberships">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowsStart" ColumnName="FailedPasswordAnswerAttemptWindowsStart" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Organisations">
+            <EntityTypeMapping TypeName="DataModel.Organisation">
+              <MappingFragment StoreEntitySet="Organisation">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SignupDate" ColumnName="SignupDate" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="PrivateKey" ColumnName="PrivateKey" />
+                <ScalarProperty Name="Handle" ColumnName="Handle" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrganisationDomains">
+            <EntityTypeMapping TypeName="DataModel.OrganisationDomain">
+              <MappingFragment StoreEntitySet="OrganisationDomain">
+                <ScalarProperty Name="OrgID" ColumnName="OrgID" />
+                <ScalarProperty Name="Domain" ColumnName="Domain" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrgPrefs">
+            <EntityTypeMapping TypeName="DataModel.OrgPref">
+              <MappingFragment StoreEntitySet="OrgPrefs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OrgID" ColumnName="OrgID" />
+                <ScalarProperty Name="PrefKey" ColumnName="PrefKey" />
+                <ScalarProperty Name="PrefValue" ColumnName="PrefValue" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payments">
+            <EntityTypeMapping TypeName="DataModel.Payment">
+              <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="TransactionRef" ColumnName="TransactionRef" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentFrequencies">
+            <EntityTypeMapping TypeName="DataModel.PaymentFrequency">
+              <MappingFragment StoreEntitySet="PaymentFrequency">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PeriodMonths" ColumnName="PeriodMonths" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentMethods">
+            <EntityTypeMapping TypeName="DataModel.PaymentMethod">
+              <MappingFragment StoreEntitySet="PaymentMethod">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentTerms">
+            <EntityTypeMapping TypeName="DataModel.PaymentTerm">
+              <MappingFragment StoreEntitySet="PaymentTerms">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PeriodDays" ColumnName="PeriodDays" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="People">
+            <EntityTypeMapping TypeName="DataModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="OrganisationID" ColumnName="OrganisationID" />
+                <ScalarProperty Name="CreationTimeStamp" ColumnName="CreationTimeStamp" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonPrefs">
+            <EntityTypeMapping TypeName="DataModel.PersonPref">
+              <MappingFragment StoreEntitySet="PersonPrefs">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="PrefKey" ColumnName="PrefKey" />
+                <ScalarProperty Name="PrefValue" ColumnName="PrefValue" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonSessions">
+            <EntityTypeMapping TypeName="DataModel.PersonSession">
+              <MappingFragment StoreEntitySet="PersonSession">
+                <ScalarProperty Name="ConnectionID" ColumnName="ConnectionID" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="UserAgent" ColumnName="UserAgent" />
+                <ScalarProperty Name="ConnectTimestamp" ColumnName="ConnectTimestamp" />
+                <ScalarProperty Name="DisconnectTimestamp" ColumnName="DisconnectTimestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profiles">
+            <EntityTypeMapping TypeName="DataModel.Profile">
+              <MappingFragment StoreEntitySet="Profiles">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PropertyNames" ColumnName="PropertyNames" />
+                <ScalarProperty Name="PropertyValueStrings" ColumnName="PropertyValueStrings" />
+                <ScalarProperty Name="PropertyValueBinary" ColumnName="PropertyValueBinary" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Relationships">
+            <EntityTypeMapping TypeName="DataModel.Relationship">
+              <MappingFragment StoreEntitySet="Relationship">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="RelatingPersonID" ColumnName="RelatingPersonID" />
+                <ScalarProperty Name="RelatedPersonID" ColumnName="RelatedPersonID" />
+                <ScalarProperty Name="RelationshipTypeID" ColumnName="RelationshipTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelationshipTypes">
+            <EntityTypeMapping TypeName="DataModel.RelationshipType">
+              <MappingFragment StoreEntitySet="RelationshipType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="DataModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subscriptions">
+            <EntityTypeMapping TypeName="DataModel.Subscription">
+              <MappingFragment StoreEntitySet="Subscription">
+                <ScalarProperty Name="SubscriptionID" ColumnName="SubscriptionID" />
+                <ScalarProperty Name="AccountID" ColumnName="AccountID" />
+                <ScalarProperty Name="SubscriptionTypeID" ColumnName="SubscriptionTypeID" />
+                <ScalarProperty Name="PriceUserMonth" ColumnName="PriceUserMonth" />
+                <ScalarProperty Name="MinUsers" ColumnName="MinUsers" />
+                <ScalarProperty Name="MaxUsers" ColumnName="MaxUsers" />
+                <ScalarProperty Name="UserCount" ColumnName="UserCount" />
+                <ScalarProperty Name="MinTermMonths" ColumnName="MinTermMonths" />
+                <ScalarProperty Name="IsRolling" ColumnName="IsRolling" />
+                <ScalarProperty Name="BaseStorageMB" ColumnName="BaseStorageMB" />
+                <ScalarProperty Name="AdditinalStorageUserMB" ColumnName="AdditinalStorageUserMB" />
+                <ScalarProperty Name="MaxConversationItems" ColumnName="MaxConversationItems" />
+                <ScalarProperty Name="EnabledFeatures" ColumnName="EnabledFeatures" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="CreatedByPersonID" ColumnName="CreatedByPersonID" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="ModifiedByPersonID" ColumnName="ModifiedByPersonID" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="CancellationCutoffDays" ColumnName="CancellationCutoffDays" />
+                <ScalarProperty Name="CancellationCutoffDate" ColumnName="CancellationCutoffDate" />
+                <ScalarProperty Name="IsTrial" ColumnName="IsTrial" />
+                <ScalarProperty Name="TrialEndDate" ColumnName="TrialEndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubscriptionTypes">
+            <EntityTypeMapping TypeName="DataModel.SubscriptionType">
+              <MappingFragment StoreEntitySet="SubscriptionType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PriceUserMonth" ColumnName="PriceUserMonth" />
+                <ScalarProperty Name="MinUsers" ColumnName="MinUsers" />
+                <ScalarProperty Name="MaxUsers" ColumnName="MaxUsers" />
+                <ScalarProperty Name="MinTermMonths" ColumnName="MinTermMonths" />
+                <ScalarProperty Name="IsRolling" ColumnName="IsRolling" />
+                <ScalarProperty Name="BaseStorageMB" ColumnName="BaseStorageMB" />
+                <ScalarProperty Name="AdditinalStorageUserMB" ColumnName="AdditinalStorageUserMB" />
+                <ScalarProperty Name="MaxConversationItems" ColumnName="MaxConversationItems" />
+                <ScalarProperty Name="EnabledFeatures" ColumnName="EnabledFeatures" />
+                <ScalarProperty Name="CancellationCutoffDays" ColumnName="CancellationCutoffDays" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IsBusiness" ColumnName="IsBusiness" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tags">
+            <EntityTypeMapping TypeName="DataModel.Tag">
+              <MappingFragment StoreEntitySet="Tag">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CreationTimestamp" ColumnName="CreationTimestamp" />
+                <ScalarProperty Name="CreatorPersonID" ColumnName="CreatorPersonID" />
+                <ScalarProperty Name="IsConversation" ColumnName="IsConversation" />
+                <ScalarProperty Name="IsSystem" ColumnName="IsSystem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TagPersons">
+            <EntityTypeMapping TypeName="DataModel.TagPerson">
+              <MappingFragment StoreEntitySet="TagPerson">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TagID" ColumnName="TagID" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="CreationTimestamp" ColumnName="CreationTimestamp" />
+                <ScalarProperty Name="CreatorPersonID" ColumnName="CreatorPersonID" />
+                <ScalarProperty Name="LastAccessed" ColumnName="LastAccessed" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Importance" ColumnName="Importance" />
+                <ScalarProperty Name="Pinned" ColumnName="Pinned" />
+                <ScalarProperty Name="Archived" ColumnName="Archived" />
+                <ScalarProperty Name="Deferred" ColumnName="Deferred" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TagPersonItems">
+            <EntityTypeMapping TypeName="DataModel.TagPersonItem">
+              <MappingFragment StoreEntitySet="TagPersonItem">
+                <ScalarProperty Name="TagPersonID" ColumnName="TagPersonID" />
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="IsViewed" ColumnName="IsViewed" />
+                <ScalarProperty Name="ViewedTimeStamp" ColumnName="ViewedTimeStamp" />
+                <ScalarProperty Name="CreatorPersonID" ColumnName="CreatorPersonID" />
+                <ScalarProperty Name="CreationTimeStamp" ColumnName="CreationTimeStamp" />
+                <ScalarProperty Name="Rank" ColumnName="Rank" />
+                <ScalarProperty Name="Importance" ColumnName="Importance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tickets">
+            <EntityTypeMapping TypeName="DataModel.Ticket">
+              <MappingFragment StoreEntitySet="Ticket">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TicketTypeID" ColumnName="TicketTypeID" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="ExpireDate" ColumnName="ExpireDate" />
+                <ScalarProperty Name="TicketRef" ColumnName="TicketRef" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TicketStatus">
+            <EntityTypeMapping TypeName="DataModel.TicketStatu">
+              <MappingFragment StoreEntitySet="TicketStatus">
+                <ScalarProperty Name="TicketStatusID" ColumnName="TicketStatusID" />
+                <ScalarProperty Name="TicketStatus" ColumnName="TicketStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TicketTypes">
+            <EntityTypeMapping TypeName="DataModel.TicketType">
+              <MappingFragment StoreEntitySet="TicketType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TicketTypeName" ColumnName="TicketTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trackables">
+            <EntityTypeMapping TypeName="DataModel.Trackable">
+              <MappingFragment StoreEntitySet="Trackable">
+                <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="AssigneePersonID" ColumnName="AssigneePersonID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="DataModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwPersonUsers">
+            <EntityTypeMapping TypeName="DataModel.vwPersonUser">
+              <MappingFragment StoreEntitySet="vwPersonUser">
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="OrganisationID" ColumnName="OrganisationID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="UsersInRoles" TypeName="DataModel.UsersInRoles" StoreEntitySet="UsersInRoles">
+            <EndProperty Name="Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="UserProfiles">
+            <EntityTypeMapping TypeName="DataModel.UserProfile">
+              <MappingFragment StoreEntitySet="UserProfile">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,27 @@
+﻿<section class="page">
+    <form>
+        <div class="head-section">
+            <div class="img">
+                <img src="../Content/images/conversation.png" />
+            </div>
+            <p>
+                <input id="name" name="name" type="text" class="" placeholder="Type the title of your conversation here" data-bind="value: conversationName">
+            </p>
+        </div>
+        <div class="photo">
+            <img src="../Content/images/photo.png" />
+        </div>
+        <div class="people">
+            <label class="control-label">Type names or emails to share with’ as placeholder in the textbox:</label>
+            <input type="text" class="" placeholder="People">
+        </div>
+        <div class="text">
+            <textarea id="message" name="message" class="" placeholder="Add your first message here" data-bind="value: message" rows="5"></textarea>
+            <div class="buttons">
+                <input type="submit" class="pull-right button" data-bind="click: addConversation" value="Post" />
+                <a href="javascript:void(0)" class="pull-right link"><strong>Cancel</strong></a>
+            </div>
+        </div>
+
+    </form>
+</section>

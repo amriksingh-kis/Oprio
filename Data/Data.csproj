@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B00C203F-53BC-4208-B547-5605C3D7838A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Data</RootNamespace>
+    <AssemblyName>Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\packages\RazorEngine.3.2.0\lib\net40\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\HasIntId.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\File.cs" />
+    <Compile Include="Models\FreeDomain.cs" />
+    <Compile Include="Models\Invite.cs" />
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\ItemStatus.cs" />
+    <Compile Include="Models\ItemStatusHistory.cs" />
+    <Compile Include="Models\ItemType.cs" />
+    <Compile Include="Models\JetContext.cs" />
+    <Compile Include="Models\Log.cs" />
+    <Compile Include="Models\Mapping\AccountMap.cs" />
+    <Compile Include="Models\Mapping\FileMap.cs" />
+    <Compile Include="Models\Mapping\FreeDomainMap.cs" />
+    <Compile Include="Models\Mapping\InviteMap.cs" />
+    <Compile Include="Models\Mapping\InvoiceMap.cs" />
+    <Compile Include="Models\Mapping\ItemMap.cs" />
+    <Compile Include="Models\Mapping\ItemStatuMap.cs" />
+    <Compile Include="Models\Mapping\ItemStatusHistoryMap.cs" />
+    <Compile Include="Models\Mapping\ItemTypeMap.cs" />
+    <Compile Include="Models\Mapping\LogMap.cs" />
+    <Compile Include="Models\Mapping\OrganisationDomainMap.cs" />
+    <Compile Include="Models\Mapping\OrganisationMap.cs" />
+    <Compile Include="Models\Mapping\OrgPrefMap.cs" />
+    <Compile Include="Models\Mapping\PaymentFrequencyMap.cs" />
+    <Compile Include="Models\Mapping\PaymentMap.cs" />
+    <Compile Include="Models\Mapping\PaymentMethodMap.cs" />
+    <Compile Include="Models\Mapping\PaymentTermMap.cs" />
+    <Compile Include="Models\Mapping\PersonMap.cs" />
+    <Compile Include="Models\Mapping\PersonPrefMap.cs" />
+    <Compile Include="Models\Mapping\PersonSessionMap.cs" />
+    <Compile Include="Models\Mapping\QRTZ_BLOB_TRIGGERSMap.cs" />
+    <Compile Include="Models\Mapping\QRTZ_CALENDARSMap.cs" />
+    <Compile Include="Models\Mapping\QRTZ_CRON_TRIGGERSMap.cs" />
+    <Compile Include="Models\Mapping\QRTZ_FIRED_TRIGGERSMap.cs" />
+    <Compile Include="Models\Mapping\QRTZ_JOB_DETAILSMap.cs" />
+    <Compile Include="Models\Mapping\QRTZ_LOCKSMap.cs" />
+    <Compile Include="Models\Mapping\QRTZ_PAUSED_TRIGGER_GRPSMap.cs" />
+    <Compile Include="Models\Mapping\QRTZ_SCHEDULER_STATEMap.cs" />
+    <Compile Include="Models\Mapping\QRTZ_SIMPLE_TRIGGERSMap.cs" />
+    <Compile Include="Models\Mapping\QRTZ_SIMPROP_TRIGGERSMap.cs" />
+    <Compile Include="Models\Mapping\QRTZ_TRIGGERSMap.cs" />
+    <Compile Include="Models\Mapping\RelationshipMap.cs" />
+    <Compile Include="Models\Mapping\RelationshipTypeMap.cs" />
+    <Compile Include="Models\Mapping\SubscriptionMap.cs" />
+    <Compile Include="Models\Mapping\SubscriptionTypeMap.cs" />
+    <Compile Include="Models\Mapping\TagMap.cs" />
+    <Compile Include="Models\Mapping\TagPersonItemMap.cs" />
+    <Compile Include="Models\Mapping\TagPersonMap.cs" />
+    <Compile Include="Models\Mapping\TicketMap.cs" />
+    <Compile Include="Models\Mapping\TicketStatusMap.cs" />
+    <Compile Include="Models\Mapping\TicketTypeMap.cs" />
+    <Compile Include="Models\Mapping\TrackableMap.cs" />
+    <Compile Include="Models\Organisation.cs" />
+    <Compile Include="Models\OrganisationDomain.cs" />
+    <Compile Include="Models\OrgPref.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\PaymentFrequency.cs" />
+    <Compile Include="Models\PaymentMethod.cs" />
+    <Compile Include="Models\PaymentTerm.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\PersonPref.cs" />
+    <Compile Include="Models\PersonSession.cs" />
+    <Compile Include="Models\QRTZ_BLOB_TRIGGERS.cs" />
+    <Compile Include="Models\QRTZ_CALENDARS.cs" />
+    <Compile Include="Models\QRTZ_CRON_TRIGGERS.cs" />
+    <Compile Include="Models\QRTZ_FIRED_TRIGGERS.cs" />
+    <Compile Include="Models\QRTZ_JOB_DETAILS.cs" />
+    <Compile Include="Models\QRTZ_LOCKS.cs" />
+    <Compile Include="Models\QRTZ_PAUSED_TRIGGER_GRPS.cs" />
+    <Compile Include="Models\QRTZ_SCHEDULER_STATE.cs" />
+    <Compile Include="Models\QRTZ_SIMPLE_TRIGGERS.cs" />
+    <Compile Include="Models\QRTZ_SIMPROP_TRIGGERS.cs" />
+    <Compile Include="Models\QRTZ_TRIGGERS.cs" />
+    <Compile Include="Models\Relationship.cs" />
+    <Compile Include="Models\RelationshipType.cs" />
+    <Compile Include="Models\Subscription.cs" />
+    <Compile Include="Models\SubscriptionType.cs" />
+    <Compile Include="Models\Tag.cs" />
+    <Compile Include="Models\TagPerson.cs" />
+    <Compile Include="Models\TagPersonItem.cs" />
+    <Compile Include="Models\Ticket.cs" />
+    <Compile Include="Models\TicketStatus.cs" />
+    <Compile Include="Models\TicketType.cs" />
+    <Compile Include="Models\Trackable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TinyModels\Organisation.cs" />
+    <Compile Include="TinyModels\PersonalInformation.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

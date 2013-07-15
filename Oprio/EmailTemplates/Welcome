@@ -1,0 +1,20 @@
+﻿Welcome to Oprio;
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div>
+        <p>Thank you for signing up to Oprio, the platform for beautiful collaboration.</p>
+        
+		<p>Please click on the link below to confirm your registration and start using Oprio</p>
+		<p>
+            <a href='http://www.oprio.com/confirm/@Model.Token'>Confirm Registration</a></p>
+        <br />
+        Sincerely,<br />
+        <br />
+        The Oprio Team
+    </div>
+</body>
+</html>

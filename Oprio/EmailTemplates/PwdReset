@@ -1,0 +1,20 @@
+﻿Oprio Password Reset;
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div>
+        <p>
+			To reset your password, please click on the link below:
+            <a href='@Model.Host/#/Account/resetPassword/@Model.ID'>@Model.Host/#/Account/resetPassword/@Model.ID</a></p>
+			<p>If you can't click on the link, simple copy the text above and paste it into your browser.  The link will expire in 72 hours.</p>
+        <br />
+        <br />
+        Sincerely,<br />
+        <br />
+        The Oprio Team
+    </div>
+</body>
+</html>

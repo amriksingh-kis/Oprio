@@ -1,0 +1,43 @@
+﻿<section>
+    <div class="container-narrow">
+        <div class="oprio-login-img-container">
+            <img src="/Content/images/OprioLogin.png" />
+        </div>
+        <div class="login-container">
+            <div class="key-container">
+                <img src="/Content/images/key.png" />
+            </div>
+            <div class="login-seperator"></div>
+            <div>
+                <label class="page-title" data-bind="text: title"></label>
+            </div>
+            <form class="login-form" action="#" method="post">
+                <div>
+                    <input class="login-txtbox" data-bind="value: UserName" placeholder="Username or Email" />
+                </div>
+                <div>
+                    <input class="login-txtbox" type="password" data-bind="value: Password" placeholder="Password" />
+                </div>
+                <div class="login-btn-container">
+                    <div class="remind-forgot-container">
+                        <div class="remember-me-container">
+                            <label class="remember-me-label">Remember me: </label>
+                            <input type="checkbox" data-bind="checked: RememberMe" />
+                        </div>
+                        <a class="forgot-pwd-link" href="#" data-bind="click: ForgotClick">Forgot Password?</a>
+                    </div>
+                    <input type="submit" class="login-btn" data-bind="click: signIn" value="Log In" />
+                </div>
+            </form>
+            <form class="forgot-pwd-form" action="#" method="post" style="display: none;">
+                <div class="login-btn-container">
+                    <div>
+                        <a class="back-to-login" href="#" data-bind="click: BackToLogin"><i class="icon-circle-arrow-left"></i></a>
+                        <input class="email-txtbox" data-bind="value: Email" placeholder="Email" />
+                        <input type="submit" class="login-btn" data-bind="click: SubmitResetPwd" value="Submit" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
